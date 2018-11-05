@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 
 class SilverTournamentViewController: UIViewController {
-
+    //var tabBarIndex: Int?
     var ref: DatabaseReference!
     var username: String! = nil
     var endDate: Int! = nil
@@ -27,6 +27,10 @@ class SilverTournamentViewController: UIViewController {
     var highScoresArray2 = [String]()
     var myString2: String = ""
     //var timerStarted = false
+    @IBAction func backButton(_ sender: UIButton) {
+        //self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "stToMenuSegue", sender: 2)
+    }
     
     //--- Silver Tournament 1 UI---//
     @IBOutlet weak var s1TimeLeft: UILabel!

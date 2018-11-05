@@ -33,7 +33,8 @@ class TournamentViewController: UIViewController {
         
         let ref = Database.database().reference()
         let uid = Auth.auth().currentUser!.uid
-        
+        //make it start locked and then unlock
+        //load it before
         ref.child("users").child(uid).child("rank").observe(.value, with: {(snapshot)in
             let value = snapshot.value as! String
             if value == self.silver {

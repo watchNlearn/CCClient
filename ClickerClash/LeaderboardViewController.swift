@@ -14,7 +14,7 @@ import FirebaseDatabase
 class LeaderboardViewController: UIViewController {
     var ref: DatabaseReference!
     
-    @IBOutlet weak var backButton: UIButton!
+    
     
     
     
@@ -50,47 +50,43 @@ class LeaderboardViewController: UIViewController {
     
     //public typealias JSON = [String : AnyObject]
 
-
-    override func viewDidLoad() {
-        
-        
+//table view
+    
+    func updateLeaderboard(){
         let ref = Database.database().reference()
-        super.viewDidLoad()
-        backButton.setTitleColor(UIColor.cyan, for: .normal)
-        backButton.layer.shadowColor = UIColor.cyan.cgColor
-        backButton.clipsToBounds = true
-        backButton.layer.cornerRadius = 11
-        self.backButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
+        
         //var leaderboardResults = [String]()
         // Do any additional setup after loading the view.
         
-        ref.child("highScores").queryOrderedByValue().queryLimited(toLast: 10).observe(.value, with: { (snapshot) in
+        ref.child("highScores").queryOrderedByValue().queryLimited(toLast: 10).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
-            
-                for child in snapshot.children {
+            self.highScoresArray = []
+            for child in snapshot.children {
                 // let test = snapshot.value as? [String:AnyObject]
                 //let users = child as! DataSnapshot
                 //print(child)
                 //let test = child as! Data
                 //let value = snapshot.value as? NSDictionary
-                    if snapshot.value != nil {
-                let key = (child as AnyObject).key as String
+                if snapshot.value != nil {
+                    let key = (child as AnyObject).key as String
                     
-                //print((child as! DataSnapshot).key)
-                self.highScoresArray.append(key)
+                    //print((child as! DataSnapshot).key)
+                    //self.highScoresArray.append(key)*
+                    self.highScoresArray.insert(key, at: 0)
                     //print(self.highScoresArray)
-                
-                    }
-                    //self.highScoresArray = self.highScoresArray.reversed()
+                    
+                }
+                //self.highScoresArray = self.highScoresArray.reversed()
             }
-            self.highScoresArray = self.highScoresArray.reversed()
+            //self.highScoresArray = self.highScoresArray.reversed()*
             // Uncomment below to check if array is working properly
             //print(self.highScoresArray)
             // messing up because expects 10 values but only has 9... so it thinks it has child of empty string
             // for loop to check array count and break out if value DNE
             for i in 0..<10 {
                 if i >= self.highScoresArray.count {
+                    
                     break
                 }
                 
@@ -237,7 +233,7 @@ class LeaderboardViewController: UIViewController {
                     
                 })
             }
-          //print("no way it breaks here")
+            //print("no way it breaks here")
             
             
             
@@ -245,12 +241,20 @@ class LeaderboardViewController: UIViewController {
         
         
         
-      
+        
+    }
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //updateLeaderboard()
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        updateLeaderboard()
+        //print("hi")
         
     }
     override func viewWillAppear(_ animated: Bool) {

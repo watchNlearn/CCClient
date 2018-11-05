@@ -11,26 +11,24 @@ import FirebaseAuth
 import Firebase
 import FirebaseDatabase
 
-class MainGameViewController: UIViewController {
+
+
+
+class MainGameViewController: UITabBarController {
     var ref: DatabaseReference!
-    @IBOutlet weak var playButton: UIButton!
-    
-    @IBOutlet weak var tournamentsButton: UIButton!
-    
-    
-    @IBOutlet weak var leaderboardButton: UIButton!
-    
-    @IBOutlet weak var logoutButtonOutlet: UIButton!
+    @IBInspectable var defaultIndex: Int = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedIndex = defaultIndex
         // Do any additional setup after loading the view.
-        
+        // 
         
         
         
         
         //Color Buttons Setups//
+        /*
         logoutButtonOutlet.setTitleColor(UIColor.cyan, for: .normal)
         logoutButtonOutlet.layer.shadowColor = UIColor.cyan.cgColor
         logoutButtonOutlet.clipsToBounds = true
@@ -75,7 +73,13 @@ class MainGameViewController: UIViewController {
         self.performSegue(withIdentifier: "mainGameToMenuSegue", sender: self)
     }
     
-    
+    */
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
