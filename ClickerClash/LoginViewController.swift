@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
             user, error in
             if error == nil && user != nil {
                 
-                self.performSegue(withIdentifier: "loginToMainGameSegue", sender: self)
+                self.performSegue(withIdentifier: "LoginToMainMenuSegue", sender: sender)
                 //self.dismiss(animated: false, completion: nil)
             }
             else {

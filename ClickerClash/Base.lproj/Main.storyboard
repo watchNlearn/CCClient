@@ -123,7 +123,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signupButtonIsPressed:" destination="Vhm-n1-0YR" eventType="touchUpInside" id="6ZG-FH-0sG"/>
-                                    <segue destination="l7V-iq-pOL" kind="show" identifier="SignUpToMainMenuSegue" id="3PI-K8-YXh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laz-tg-5Xj">
@@ -160,6 +159,7 @@
                         <outlet property="signupPassword" destination="tGy-LB-y5K" id="Xjv-hn-aep"/>
                         <outlet property="signupUsername" destination="TKw-91-OCb" id="wOL-1e-803"/>
                         <outlet property="usernameLabel" destination="laz-tg-5Xj" id="qTv-h1-ozn"/>
+                        <segue destination="l7V-iq-pOL" kind="show" identifier="SignUpToMainMenuSegue" id="mmK-kc-vsI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgm-Fb-Y3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2201,10 +2201,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="Home"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButton:" destination="p0I-6g-dda" eventType="touchUpInside" id="nxI-ZE-JqT"/>
-                                    <segue destination="l7V-iq-pOL" kind="show" identifier="stToMenuSegue" id="m6J-vw-SFP"/>
+                                    <segue destination="l7V-iq-pOL" kind="show" identifier="stToMenuSegue" id="tsP-Pt-IIF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcu-X6-wAm">
@@ -3307,7 +3307,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonIsPressed:" destination="CLM-7E-4Gu" eventType="touchUpInside" id="sLK-d3-0Mg"/>
-                                    <segue destination="l7V-iq-pOL" kind="show" identifier="LoginToMainMenuSegue" id="Gsu-ad-zRK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sij-ZK-Szf">
@@ -3343,6 +3342,7 @@
                         <outlet property="loginButton" destination="6kf-Jk-bgv" id="uNb-Jc-vcl"/>
                         <outlet property="loginEmail" destination="sij-ZK-Szf" id="U67-IG-ChF"/>
                         <outlet property="loginPassword" destination="c35-K2-nqE" id="PDh-I2-zXv"/>
+                        <segue destination="l7V-iq-pOL" kind="show" identifier="LoginToMainMenuSegue" id="5Qi-4c-LR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcf-BR-Rbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3354,8 +3354,8 @@
         <segue reference="YCp-rW-lyp"/>
         <segue reference="EQm-7f-s55"/>
         <segue reference="DDK-oa-NVJ"/>
-        <segue reference="m6J-vw-SFP"/>
-        <segue reference="G3z-7u-L8J"/>
+        <segue reference="5Qi-4c-LR7"/>
+        <segue reference="6kE-fE-WYJ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

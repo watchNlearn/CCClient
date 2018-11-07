@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+
 class SignUpViewController: UIViewController {
     
     var ref: DatabaseReference!
@@ -51,6 +52,7 @@ class SignUpViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 //print("existing username?")
                 //print("new username?")
+                print("is it checking un?")
                 
             }
             else {
@@ -77,7 +79,7 @@ class SignUpViewController: UIViewController {
                                 //ref.child("usernames").setValue(["username": username, "uid": uid])
                                 
                                 print("User's display name changed")
-                                self.dismiss(animated: false, completion: nil)
+                                //self.dismiss(animated: false, completion: nil)
                             }
                             
                             
@@ -87,8 +89,11 @@ class SignUpViewController: UIViewController {
                         // to set cc coin upon creating account
                         //ref.child("clashCoins").child(username!).child(uid).child("cc").setValue(0)
                         ref.child("users").child(uid).setValue(["email": email, "username": username])
-                        ref.child("users").child(uid).child("rank").setValue("silver")
-                    
+                        ref.child("users").child(uid).child("package").setValue("standard")
+                        ref.child("users").child(uid).child("highScore").setValue(0)
+                        print("here?")
+                        
+                        self.performSegue(withIdentifier: "SignUpToMainMenuSegue", sender: sender)
                         
                         
                     }

@@ -191,10 +191,11 @@ class PlayGameViewController: UIViewController {
            
             print("reading score data")
             }
+            
             else {
                 print("No highscore found")
             }
-            
+ 
             })
         }
         

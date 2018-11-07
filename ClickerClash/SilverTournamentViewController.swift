@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 
 class SilverTournamentViewController: UIViewController {
-    //var tabBarIndex: Int?
+    var tabBarIndex: Int?
     var ref: DatabaseReference!
     var username: String! = nil
     var endDate: Int! = nil
@@ -29,7 +29,8 @@ class SilverTournamentViewController: UIViewController {
     //var timerStarted = false
     @IBAction func backButton(_ sender: UIButton) {
         //self.dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "stToMenuSegue", sender: 2)
+        //self.performSegue(withIdentifier: "stToMenuSegue", sender: AnyObject.self)
+        self.loadTabBarController(atIndex: 1)
     }
     
     //--- Silver Tournament 1 UI---//
@@ -85,6 +86,17 @@ class SilverTournamentViewController: UIViewController {
         let ref = Database.database().reference()
         ref.child("tournaments").child("silver").child("st2").child("users").child(username!).setValue(true)
 
+    }
+  
+    private func loadTabBarController(atIndex: Int){
+        self.tabBarIndex = 1
+        self.performSegue(withIdentifier: "stToMenuSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stToMenuSegue"{
+            let tabBarVC = segue.destination as! UITabBarController
+            tabBarVC.selectedIndex = self.tabBarIndex!
+        }
     }
     
     
@@ -455,6 +467,7 @@ class SilverTournamentViewController: UIViewController {
         super.viewWillAppear(animated)
         
     }
+  
 
         
       
