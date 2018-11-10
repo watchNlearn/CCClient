@@ -104,7 +104,7 @@ class St2PlayGameViewController: UIViewController {
                         let uid = Auth.auth().currentUser!.uid
                         ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(self.username!).setValue(currentCountHere)
                         print(currentCountHere)
-                        print("saving users high score data to st1 tournament users")
+                        print("saving users high score data to st2 tournament users")
                         //CHECK IF USER HASN'T PLAYED BEFORE EVER FOR PERSONAL STAT
                         
                         ref.child("users").child(uid).child("highScore").observeSingleEvent(of: .value, with: {
@@ -141,7 +141,7 @@ class St2PlayGameViewController: UIViewController {
                         let uid = Auth.auth().currentUser!.uid
                         let ref = Database.database().reference()
                         ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(self.username!).setValue(currentCountHere)
-                        print("saving users high score data to st1 users for first time")
+                        print("saving users high score data to st2 users for first time")
                         //CHECK IF USER HASN'T PLAYED BEFORE EVER FOR PERSONAL STAT
                         ref.child("users").child(uid).child("highScore").observeSingleEvent(of: .value, with: {
                             (snapshot) in
@@ -165,11 +165,12 @@ class St2PlayGameViewController: UIViewController {
                     
                 }
             })
-            //ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
+            //ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
             //let value = snapshot.value as! Int
             //let StringValue = String(value)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + String(self.clashHighScore), preferredStyle: UIAlertControllerStyle.alert)
+            //dispatchq
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + (self.playerHighScoreC.text!), preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -181,6 +182,19 @@ class St2PlayGameViewController: UIViewController {
                 self.buttonOutlet.setTitleColor(UIColor.darkGray, for: .disabled)
             }
         }
+    }
+    @objc func resetTimer(){
+        //seconds = 0
+        //sender.tag = 0
+        //newGame = true
+        currentCount = 0
+        currentScore.text = String(currentCount)
+        seconds = 0
+        timer.text = String(seconds)
+        timecount.invalidate()
+        newGame = true
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -202,11 +216,11 @@ class St2PlayGameViewController: UIViewController {
                             
                             self.playerHighScoreC.text = highscore
                             
-                            print("reading st1 score data")
+                            print("reading st2 score data")
                         }
                             //dont think it will ever reach here...
                         else {
-                            print("No st1 highscore found")
+                            print("No st2 highscore found")
                         }
                         
                         
@@ -214,7 +228,7 @@ class St2PlayGameViewController: UIViewController {
                     })
                 }
                 else {
-                    print("User has no recorded score in st1")
+                    print("User has no recorded score in st2")
                 }
             })
         }
@@ -223,6 +237,7 @@ class St2PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(St2PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
         if Auth.auth().currentUser != nil{
             usernameLabel.text = Auth.auth().currentUser?.displayName
         }

@@ -182,7 +182,7 @@ class St1PlayGameViewController: UIViewController {
             //ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
             //let value = snapshot.value as! Int
             //let StringValue = String(value)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + String(self.clashHighScore), preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
@@ -195,6 +195,15 @@ class St1PlayGameViewController: UIViewController {
             self.buttonOutlet.setTitleColor(UIColor.darkGray, for: .disabled)
             }
         }
+    }
+    @objc func resetTimer(){
+        currentCount = 0
+        currentScore.text = String(currentCount)
+        seconds = 0
+        timer.text = String(seconds)
+        timecount.invalidate()
+        newGame = true
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -237,6 +246,7 @@ class St1PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(St1PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
         if Auth.auth().currentUser != nil{
             usernameLabel.text = Auth.auth().currentUser?.displayName
         }

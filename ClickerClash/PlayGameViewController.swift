@@ -166,6 +166,18 @@ class PlayGameViewController: UIViewController {
             currentScore.text = String(currentCount)
             }
         }
+    
+    @objc func resetTimer(){
+        
+        currentCount = 0
+        currentScore.text = String(currentCount)
+        seconds = 0
+        timer.text = String(seconds)
+        timecount.invalidate()
+        newGame = true
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //let uid = Auth.auth().currentUser!.uid
@@ -203,6 +215,9 @@ class PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
+
+
         if Auth.auth().currentUser != nil{
             //let uid = Auth.auth().currentUser!.uid
             usernameLabel.text = Auth.auth().currentUser?.displayName
