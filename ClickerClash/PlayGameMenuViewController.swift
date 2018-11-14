@@ -1,14 +1,18 @@
 //
-//  GoldTournamentViewController.swift
+//  PlayGameMenuViewController.swift
 //  ClickerClash
 //
-//  Created by Caleb Lee on 10/9/18.
+//  Created by Caleb Lee on 11/11/18.
 //  Copyright © 2018 WithoutAnyLimits. All rights reserved.
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
-class GoldTournamentViewController: UIViewController {
+
+class PlayGameMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

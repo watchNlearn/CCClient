@@ -20,6 +20,7 @@ class MainGameViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.inActiveTintColor()
         selectedIndex = defaultIndex
         // Do any additional setup after loading the view.
         // 

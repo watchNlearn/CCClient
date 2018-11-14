@@ -54,16 +54,16 @@ class LoginViewController: UIViewController {
         loginEmail.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         loginPassword.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         
-        loginButton.setTitleColor(UIColor.cyan, for: .normal)
-        loginButton.layer.shadowColor = UIColor.cyan.cgColor
+        //loginButton.setTitleColor(UIColor.cyan, for: .normal)
+        //loginButton.layer.shadowColor = UIColor.cyan.cgColor
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 11
-        self.loginButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
-        cancelButton.setTitleColor(UIColor.cyan, for: .normal)
-        cancelButton.layer.shadowColor = UIColor.cyan.cgColor
+        //self.loginButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
+       // cancelButton.setTitleColor(UIColor.cyan, for: .normal)
+        //cancelButton.layer.shadowColor = UIColor.cyan.cgColor
         cancelButton.clipsToBounds = true
         cancelButton.layer.cornerRadius = 11
-        self.cancelButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
+        //self.cancelButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
         
         self.view.bringSubview(toFront: loginEmail)
         self.view.bringSubview(toFront: loginPassword)

@@ -27,11 +27,11 @@ class SilverTournamentViewController: UIViewController {
     var highScoresArray2 = [String]()
     var myString2: String = ""
     //var timerStarted = false
-    @IBAction func backButton(_ sender: UIButton) {
+    //@IBAction func backButton(_ sender: UIButton) {
         //self.dismiss(animated: true, completion: nil)
         //self.performSegue(withIdentifier: "stToMenuSegue", sender: AnyObject.self)
-        self.loadTabBarController(atIndex: 1)
-    }
+       // self.loadTabBarController(atIndex: 1)
+    //}
     
     //--- Silver Tournament 1 UI---//
     @IBOutlet weak var s1TimeLeft: UILabel!
@@ -78,13 +78,13 @@ class SilverTournamentViewController: UIViewController {
 
     @IBAction func s1JoinButtonAction(_ sender: UIButton) {
         let ref = Database.database().reference()
-        ref.child("tournaments").child("silver").child("st1").child("users").child(username!).setValue(true)
+        ref.child("tournaments").child("standard").child("st1").child("users").child(username!).setValue(true)
     }
     
     
     @IBAction func s2JoinButtonAction(_ sender: UIButton) {
         let ref = Database.database().reference()
-        ref.child("tournaments").child("silver").child("st2").child("users").child(username!).setValue(true)
+        ref.child("tournaments").child("standard").child("st2").child("users").child(username!).setValue(true)
 
     }
   
@@ -104,25 +104,36 @@ class SilverTournamentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set buttons to disabled and then make active
+       
+        self.s1JoinButton.isEnabled = false
+        self.s1PlayButton.isEnabled = false
+        self.s2JoinButton.isEnabled = false
+        self.s2PlayButton.isEnabled = false
         
-
         let ref = Database.database().reference()
         let uid = Auth.auth().currentUser?.uid
         //get username function
-        ref.child("users").child(uid!).child("username").observe(.value, with: {(snapshot)
-            in
-            self.username = snapshot.value as? String
-           
-        })
+        //print(uid)
+        //print("here????")
         let currentDate = Int(NSDate().timeIntervalSince1970)
         print(currentDate)
+        ref.child("users").child(uid!).child("username").observe(.value, with: {(snapshot) in
+            print("hello")
+            print(snapshot)
+            self.username = snapshot.value as? String
+            print(self.username)
+           
+        })
+        //let currentDate = Int(NSDate().timeIntervalSince1970)
+        //print(currentDate)
        //--------- Silver Tournament 1----------//
         
         
        //End Date
        // let ref = Database.database().reference()
         //end date for st1
-        ref.child("tournaments").child("silver").child("st1").child("endDate").observe(.value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st1").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate = snapshot.value as? Int
             //})
             if currentDate < self.endDate {
@@ -133,12 +144,14 @@ class SilverTournamentViewController: UIViewController {
         else {
             self.s1TimeLeft.text = "Closed"
                 self.s1JoinButton.isEnabled = false
+                self.s1JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s1PlayButton.isEnabled = false
+                self.s1PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
             //self.s1Status.text = "Offline"
         }
         })
         //end date for st2
-        ref.child("tournaments").child("silver").child("st2").child("endDate").observe(.value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st2").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate2 = snapshot.value as? Int
             //})
             if currentDate < self.endDate2 {
@@ -149,14 +162,16 @@ class SilverTournamentViewController: UIViewController {
             else {
                 self.s2TimeLeft.text = "Closed"
                 self.s2JoinButton.isEnabled = false
+                self.s2JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s2PlayButton.isEnabled = false
+                self.s2PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 //self.s1Status.text = "Offline"
             }
         })
         
        //Status//s1
         //added s1status restarting
-        ref.child("tournaments").child("silver").child("st1").child("status").observe(.value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st1").child("status").observe(.value, with: {(snapshot) in
             let status = snapshot.value as! String
             if status == "online" {
                 self.s1Status.text = "Online"
@@ -170,7 +185,7 @@ class SilverTournamentViewController: UIViewController {
         })
         //Status//s2
         //added s2status restarting
-        ref.child("tournaments").child("silver").child("st2").child("status").observe(.value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st2").child("status").observe(.value, with: {(snapshot) in
             let status = snapshot.value as! String
             if status == "online" {
                 self.s2Status.text = "Online"
@@ -185,12 +200,12 @@ class SilverTournamentViewController: UIViewController {
         ///////////////////////////////////////////////////////////////////////////////////
         // Loading Current Rankings// Loading Current Rankings// Loading Current Rankings//
         ///////////////////////////////////////////////////////////////////////////////////
-        ref.child("tournaments").child("silver").child("st1").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("tournaments").child("standard").child("st1").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
             
             for child in snapshot.children {
-               
+               //print(snapshot)
                 if snapshot.value != nil {
                     let key = (child as AnyObject).key as String
                     self.highScoresArray.append(key)
@@ -240,7 +255,7 @@ class SilverTournamentViewController: UIViewController {
             //this is outside the for loop
             if self.st1hs1.text != "" {
                 let hs1Username = self.st1hs1.text
-                ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(hs1Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs1Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs1Value = String(value)
                     self.st1hs1s.text = hs1Value
@@ -249,7 +264,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st1hs2.text != "" {
                 let hs2Username = self.st1hs2.text
-                ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(hs2Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs2Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs2Value = String(value)
                     self.st1hs2s.text = hs2Value
@@ -258,7 +273,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st1hs3.text != "" {
                 let hs3Username = self.st1hs3.text
-               ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+               ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs3Value = String(value)
                     self.st1hs3s.text = hs3Value
@@ -267,7 +282,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st1hs4.text != "" {
                 let hs4Username = self.st1hs4.text
-                ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(hs4Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs4Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs4Value = String(value)
                     self.st1hs4s.text = hs4Value
@@ -276,7 +291,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st1hs5.text != "" {
                 let hs5Username = self.st1hs5.text
-                ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(hs5Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs5Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs5Value = String(value)
                     self.st1hs5s.text = hs5Value
@@ -293,7 +308,7 @@ class SilverTournamentViewController: UIViewController {
             
         })
         //SILVER TOURNAMENT 2 CURRENT RANKINGS
-        ref.child("tournaments").child("silver").child("st2").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("tournaments").child("standard").child("st2").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
             
@@ -348,7 +363,7 @@ class SilverTournamentViewController: UIViewController {
             //this is outside the for loop
             if self.st2hs1.text != "" {
                 let hs1Username = self.st2hs1.text
-                ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(hs1Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(hs1Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs1Value = String(value)
                     self.st2hs1s.text = hs1Value
@@ -357,7 +372,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st2hs2.text != "" {
                 let hs2Username = self.st2hs2.text
-                ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(hs2Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(hs2Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs2Value = String(value)
                     self.st2hs2s.text = hs2Value
@@ -366,7 +381,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st2hs3.text != "" {
                 let hs3Username = self.st2hs3.text
-                ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs3Value = String(value)
                     self.st2hs3s.text = hs3Value
@@ -375,7 +390,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st2hs4.text != "" {
                 let hs4Username = self.st2hs4.text
-                ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(hs4Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(hs4Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs4Value = String(value)
                     self.st2hs4s.text = hs4Value
@@ -384,7 +399,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st2hs5.text != "" {
                 let hs5Username = self.st2hs5.text
-                ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(hs5Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(hs5Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs5Value = String(value)
                     self.st2hs5s.text = hs5Value
@@ -403,8 +418,8 @@ class SilverTournamentViewController: UIViewController {
         //////////////////////////////////////////////////////////////////////////////////
         
        //Join/Play/St1
-        ref.child("tournaments").child("silver").child("st1").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
-            
+        ref.child("tournaments").child("standard").child("st1").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
+            //print(self.username)
             if snapshot.hasChild(self.username!) && self.s1TimeLeft.text != "Closed"{
                 self.s1JoinButton.isEnabled = false
                 self.s1JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
@@ -431,7 +446,7 @@ class SilverTournamentViewController: UIViewController {
             
         })
         //join/play st2
-        ref.child("tournaments").child("silver").child("st2").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st2").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
             
             if snapshot.hasChild(self.username!) && self.s2TimeLeft.text != "Closed"{
                 self.s2JoinButton.isEnabled = false
@@ -466,6 +481,7 @@ class SilverTournamentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
     }
   
 
@@ -476,47 +492,48 @@ class SilverTournamentViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-            if self.st1hs1.text == self.username {
-                st1hs1.layer.borderColor = UIColor.orange.cgColor
-                st1hs1.layer.borderWidth = 1.0
-            }
-            if self.st1hs2.text == self.username {
-                st1hs2.layer.borderColor = UIColor.orange.cgColor
-                st1hs2.layer.borderWidth = 1.0
-            }
-            if self.st1hs3.text == self.username {
-                st1hs3.layer.borderColor = UIColor.orange.cgColor
-                st1hs3.layer.borderWidth = 1.0
-            }
-            if self.st1hs4.text == self.username {
+        if self.st1hs1.text == self.username {
+            st1hs1.layer.borderColor = UIColor.orange.cgColor
+            st1hs1.layer.borderWidth = 1.0
+        }
+        if self.st1hs2.text == self.username {
+            st1hs2.layer.borderColor = UIColor.orange.cgColor
+            st1hs2.layer.borderWidth = 1.0
+        }
+        if self.st1hs3.text == self.username {
+            st1hs3.layer.borderColor = UIColor.orange.cgColor
+            st1hs3.layer.borderWidth = 1.0
+        }
+        if self.st1hs4.text == self.username {
             st1hs4.layer.borderColor = UIColor.orange.cgColor
             st1hs4.layer.borderWidth = 1.0
-            }
-            if self.st1hs5.text == self.username {
+        }
+        if self.st1hs5.text == self.username {
             st1hs5.layer.borderColor = UIColor.orange.cgColor
             st1hs5.layer.borderWidth = 1.0
-            }
-            if self.st2hs1.text == self.username {
+        }
+        if self.st2hs1.text == self.username {
             st2hs1.layer.borderColor = UIColor.orange.cgColor
             st2hs1.layer.borderWidth = 1.0
-            }
-            if self.st2hs2.text == self.username {
+        }
+        if self.st2hs2.text == self.username {
             st2hs2.layer.borderColor = UIColor.orange.cgColor
             st2hs2.layer.borderWidth = 1.0
-            }
-            if self.st2hs3.text == self.username {
+        }
+        if self.st2hs3.text == self.username {
             st2hs3.layer.borderColor = UIColor.orange.cgColor
             st2hs3.layer.borderWidth = 1.0
-            }
-            if self.st2hs4.text == self.username {
+        }
+        if self.st2hs4.text == self.username {
             st2hs4.layer.borderColor = UIColor.orange.cgColor
             st2hs4.layer.borderWidth = 1.0
-            }
-            if self.st2hs5.text == self.username {
+        }
+        if self.st2hs5.text == self.username {
             st2hs5.layer.borderColor = UIColor.orange.cgColor
             st2hs5.layer.borderWidth = 1.0
-            }
+        }
+        
+        
         
         
         

@@ -106,7 +106,7 @@ class St1PlayGameViewController: UIViewController {
             print(currentCount)
             let currentCountHere = currentCount
             //newGame = true
-            ref.child("tournaments").child("silver").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
+            ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.hasChild(self.username!){//updating the users score
                     print(currentCountHere)
                     if currentCountHere >= clashHighScoreStart {
@@ -116,7 +116,7 @@ class St1PlayGameViewController: UIViewController {
                         //let uid = Auth.auth().currentUser!.uid
                         let ref = Database.database().reference()
                         let uid = Auth.auth().currentUser!.uid
-                        ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(self.username!).setValue(currentCountHere)
+                        ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username!).setValue(currentCountHere)
                         print(currentCountHere)
                         print("saving users high score data to st1 tournament users")
                         //CHECK IF USER HASN'T PLAYED BEFORE EVER FOR PERSONAL STAT
@@ -154,7 +154,7 @@ class St1PlayGameViewController: UIViewController {
                         self.currentScore.text = String(currentCountHere)
                         let uid = Auth.auth().currentUser!.uid
                         let ref = Database.database().reference()
-                    ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(self.username!).setValue(currentCountHere)
+                    ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username!).setValue(currentCountHere)
                         print("saving users high score data to st1 users for first time")
                         //CHECK IF USER HASN'T PLAYED BEFORE EVER FOR PERSONAL STAT
                         ref.child("users").child(uid).child("highScore").observeSingleEvent(of: .value, with: {
@@ -216,9 +216,9 @@ class St1PlayGameViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             //let uid = Auth.auth().currentUser!.uid
             let ref = Database.database().reference()
-            ref.child("tournaments").child("silver").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
+            ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
                 if snapshot.hasChild(self.username!){
-                    ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(self.username!).observe(.value, with: {(snapshot) in
+                    ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username!).observe(.value, with: {(snapshot) in
                         let value = snapshot.value as? Int
                         if value != nil {
                             let highscore = String(value!)
@@ -253,7 +253,7 @@ class St1PlayGameViewController: UIViewController {
         let currentDate = Int(NSDate().timeIntervalSince1970)
         print(currentDate)
         let ref = Database.database().reference()
-        ref.child("tournaments").child("silver").child("st1").child("endDate").observe(.value, with: {(snapshot) in
+        ref.child("tournaments").child("standard").child("st1").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate = snapshot.value as? Int
             //})
             if currentDate < self.endDate {

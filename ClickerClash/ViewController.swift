@@ -21,22 +21,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
       
         // Do any additional setup after loading the view, typically from a nib.
-        login.backgroundColor = UIColor.magenta
-        login.setTitleColor(UIColor.cyan, for: .normal)
-        login.layer.shadowColor = UIColor.cyan.cgColor
+        //login.backgroundColor = UIColor.magenta
+        //login.setTitleColor(UIColor.cyan, for: .normal)
+        //login.layer.shadowColor = UIColor.cyan.cgColor
         login.clipsToBounds = true
         login.layer.cornerRadius = 11
-        self.login.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
+        //self.login.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
         
         
         
-        
+        /*
         signup.backgroundColor = UIColor.magenta
         signup.setTitleColor(UIColor.cyan, for: .normal)
         signup.layer.shadowColor = UIColor.cyan.cgColor
+        */
         signup.clipsToBounds = true
         signup.layer.cornerRadius = 11
-        self.signup.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
+        //self.signup.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
 
         
         gradient = CAGradientLayer()
