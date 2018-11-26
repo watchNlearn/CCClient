@@ -10,10 +10,13 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import GoogleMobileAds
 
-class St2PlayGameViewController: UIViewController {
+class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     var username = Auth.auth().currentUser?.displayName
     var ref:DatabaseReference?
+    var interstitial: GADInterstitial!
+    //var testDevices: [Any]? { get set }
     //var uid = Auth.auth().currentUser?.uid
     //let pHighScore:Int? = Int(myString)
     var clashHighScore = Int()
@@ -39,6 +42,7 @@ class St2PlayGameViewController: UIViewController {
     
     @IBOutlet weak var buttonOutlet: UIButton!
     
+   // @IBOutlet weak var bannerView: GADBannerView!
     
     @IBAction func button(_ sender: UIButton)
     {
@@ -165,15 +169,21 @@ class St2PlayGameViewController: UIViewController {
                     
                 }
             })
+            //interstitial.load(GADRequest())
+            presentAd()
             //ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
             //let value = snapshot.value as! Int
             //let StringValue = String(value)
             //dispatchq
+            //interstitial.present(fromRootViewController: self)
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + (self.playerHighScoreC.text!), preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
+                
             }
+            
             currentCount = 0
             currentScore.text = String(currentCount)
             self.newGame = true
@@ -237,6 +247,20 @@ class St2PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //interstitial.delegate = self as? GADInterstitialDelegate
+        //interstitial = createAndLoadInterstitial()
+        //interstitial.delegate = self as? GADInterstitialDelegate
+    
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
+        interstitial.delegate = self
+        
+        
+        
+        
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(St2PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
         if Auth.auth().currentUser != nil{
             usernameLabel.text = Auth.auth().currentUser?.displayName
@@ -257,6 +281,42 @@ class St2PlayGameViewController: UIViewController {
             }
         })
         //Sets String of textbox to Int pHighScore
+        
+        
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        //interstitial.delegate = self as? GADInterstitialDelegate
+        interstitial.load(GADRequest())
+        interstitial.delegate = self
+        return interstitial
+    }
+ 
+    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+        print("Ad presented")
+    }
+    func presentAd() {
+        if self.interstitial.isReady {
+            self.interstitial.present(fromRootViewController: self)
+            interstitial = createAndLoadInterstitial()
+            
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("Ad dismissed")
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + (self.playerHighScoreC.text!), preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            
+        //}
+        //interstitial = createAndLoadInterstitial()
+        interstitial.load(GADRequest())
+        print("heyy")
         
         
     }

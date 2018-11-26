@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import SVProgressHUD
 
 class SignUpViewController: UIViewController {
     
@@ -34,11 +35,13 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signupButtonIsPressed(_ sender: UIButton) {
         
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show(withStatus: "Creating Account...")
         
         ref = Database.database().reference()
-        let username = signupUsername.text
-        let email = signupEmail.text
-        let password = signupPassword.text
+        let username = signupUsername.text?.trimmingCharacters(in: .whitespaces)
+        let email = signupEmail.text?.trimmingCharacters(in: .whitespaces)
+        let password = signupPassword.text?.trimmingCharacters(in: .whitespaces)
         //let userID = Auth.auth().
         //if username != exisrting username {
         //ref.child("usernames").observe(.value, with: {(snapshot) in
@@ -47,12 +50,13 @@ class SignUpViewController: UIViewController {
             //let value = snapshot.value as? String
             //print(value)
             if snapshot.hasChild(username!) {
+                SVProgressHUD.dismiss()
                 let alertController = UIAlertController(title: "Error Creating User", message: "Username Already Exists", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 //print("existing username?")
                 //print("new username?")
-                print("is it checking un?")
+                //print("is it checking un?")
                 
             }
             else {
@@ -63,6 +67,7 @@ class SignUpViewController: UIViewController {
                     
                     
                     if error == nil && user != nil{
+                        
                         print("User Created")
                         
                         let uid = Auth.auth().currentUser!.uid
@@ -91,13 +96,15 @@ class SignUpViewController: UIViewController {
                         ref.child("users").child(uid).setValue(["email": email, "username": username])
                         ref.child("users").child(uid).child("package").setValue("standard")
                         ref.child("users").child(uid).child("highScore").setValue(0)
+                        ref.child("users").child(uid).child("tWins").setValue(0)
                         print("here?")
-                        
+                        SVProgressHUD.dismiss()
                         self.performSegue(withIdentifier: "SignUpToMainMenuSegue", sender: sender)
                         
                         
                     }
                     else {
+                        SVProgressHUD.dismiss()
                         let alertController = UIAlertController(title: "Error Creating User", message: "\(error!.localizedDescription)", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
@@ -155,6 +162,7 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @objc func editingChanged(_ textField: UITextField){
         
         if textField.text?.characters.count == 1 {
@@ -198,3 +206,4 @@ class SignUpViewController: UIViewController {
     */
 
 }
+

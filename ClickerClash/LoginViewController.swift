@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -22,17 +23,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func loginButtonIsPressed(_ sender: UIButton) {
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show(withStatus: "Logging In...")
         let email = loginEmail.text
         let password = loginPassword.text
         
         Auth.auth().signIn(withEmail: email!, password: password!) {
             user, error in
             if error == nil && user != nil {
-                
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "LoginToMainMenuSegue", sender: sender)
                 //self.dismiss(animated: false, completion: nil)
             }
             else {
+                SVProgressHUD.dismiss()
                 let alertController = UIAlertController(title: "Error Logging In", message: "Account Doesn't Exist Or Password Is Incorrect", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)

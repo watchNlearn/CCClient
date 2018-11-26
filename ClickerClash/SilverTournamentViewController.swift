@@ -11,12 +11,16 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
-
+import SVProgressHUD
 
 class SilverTournamentViewController: UIViewController {
     var tabBarIndex: Int?
     var ref: DatabaseReference!
-    var username: String! = nil
+    var st1loadingDone = false
+    var st2loadingDone = false
+    //var username: String! = nil
+    var finishedLoading = false
+    var username = Auth.auth().currentUser?.displayName
     var endDate: Int! = nil
     var endDate2: Int! = nil
     var timeCount2 = Timer()
@@ -74,8 +78,16 @@ class SilverTournamentViewController: UIViewController {
     @IBOutlet weak var st2hs4s: UILabel!
     @IBOutlet weak var st2hs5s: UILabel!
     /////////////////////////
-
-
+    
+    //
+    @IBAction func s1PlayButtonAction(_ sender: UIButton) {
+        if finishedLoading == true {
+            print("finished loading")
+        }
+        else{
+            print("not finished loading")
+        }
+    }
     @IBAction func s1JoinButtonAction(_ sender: UIButton) {
         let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st1").child("users").child(username!).setValue(true)
@@ -98,59 +110,37 @@ class SilverTournamentViewController: UIViewController {
             tabBarVC.selectedIndex = self.tabBarIndex!
         }
     }
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //Set buttons to disabled and then make active
-       
-        self.s1JoinButton.isEnabled = false
-        self.s1PlayButton.isEnabled = false
-        self.s2JoinButton.isEnabled = false
-        self.s2PlayButton.isEnabled = false
-        
-        let ref = Database.database().reference()
-        let uid = Auth.auth().currentUser?.uid
-        //get username function
-        //print(uid)
-        //print("here????")
+    func st1EndDate(){
         let currentDate = Int(NSDate().timeIntervalSince1970)
-        print(currentDate)
-        ref.child("users").child(uid!).child("username").observe(.value, with: {(snapshot) in
-            print("hello")
-            print(snapshot)
-            self.username = snapshot.value as? String
-            print(self.username)
-           
-        })
-        //let currentDate = Int(NSDate().timeIntervalSince1970)
-        //print(currentDate)
-       //--------- Silver Tournament 1----------//
-        
-        
-       //End Date
-       // let ref = Database.database().reference()
-        //end date for st1
+        let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st1").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate = snapshot.value as? Int
             //})
             if currentDate < self.endDate {
-        self.timeCount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter) , userInfo: nil, repeats: true)
-        //timerStarted = true
-           // self.s1Status.text = "Active"
+                self.timeCount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter) , userInfo: nil, repeats: true)
+                //timerStarted = true
+                // self.s1Status.text = "Active"
             }
-        else {
-            self.s1TimeLeft.text = "Closed"
+            else {
+                print("hello there")
+                self.s1TimeLeft.text = "Closed"
                 self.s1JoinButton.isEnabled = false
+                self.s1JoinButton.isUserInteractionEnabled = false
+                self.s1JoinButton.isHidden = false
                 self.s1JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s1PlayButton.isEnabled = false
+                self.s1PlayButton.isUserInteractionEnabled = false
+                self.s1PlayButton.isHidden = false
                 self.s1PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
-            //self.s1Status.text = "Offline"
-        }
+                //SVProgressHUD.dismiss()
+                //self.s1Status.text = "Offline"
+            }
         })
-        //end date for st2
+        print("st1EndDate Done")
+    }
+    func st2EndDate(){
+        let currentDate = Int(NSDate().timeIntervalSince1970)
+        let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st2").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate2 = snapshot.value as? Int
             //})
@@ -158,54 +148,34 @@ class SilverTournamentViewController: UIViewController {
                 self.timeCount2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter2) , userInfo: nil, repeats: true)
                 //timerStarted = true
                 // self.s1Status.text = "Active"
+                //self.s2JoinButton.isHidden = false
+                //self.s2PlayButton.isHidden = false
+                //SVProgressHUD.dismiss()
             }
             else {
                 self.s2TimeLeft.text = "Closed"
                 self.s2JoinButton.isEnabled = false
+                self.s2JoinButton.isUserInteractionEnabled = false
+                self.s2JoinButton.isHidden = false
                 self.s2JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s2PlayButton.isEnabled = false
+                self.s2PlayButton.isHidden = false
+                self.s2PlayButton.isUserInteractionEnabled = false
                 self.s2PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 //self.s1Status.text = "Offline"
+                SVProgressHUD.dismiss()
             }
         })
-        
-       //Status//s1
-        //added s1status restarting
-        ref.child("tournaments").child("standard").child("st1").child("status").observe(.value, with: {(snapshot) in
-            let status = snapshot.value as! String
-            if status == "online" {
-                self.s1Status.text = "Online"
-            }
-            if status == "restarting"{
-                self.s1Status.text = "Restarting"
-            }
-            if status == "offline" {
-                self.s1Status.text = "Offline"
-            }
-        })
-        //Status//s2
-        //added s2status restarting
-        ref.child("tournaments").child("standard").child("st2").child("status").observe(.value, with: {(snapshot) in
-            let status = snapshot.value as! String
-            if status == "online" {
-                self.s2Status.text = "Online"
-            }
-            if status == "restarting"{
-                self.s2Status.text = "Restarting"
-            }
-            if status == "offline" {
-                self.s2Status.text = "Offline"
-            }
-        })
-        ///////////////////////////////////////////////////////////////////////////////////
-        // Loading Current Rankings// Loading Current Rankings// Loading Current Rankings//
-        ///////////////////////////////////////////////////////////////////////////////////
+        print("st2EndDate Done")
+    }
+    func st1CurrentRankings(){
+        let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st1").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
             
             for child in snapshot.children {
-               //print(snapshot)
+                //print(snapshot)
                 if snapshot.value != nil {
                     let key = (child as AnyObject).key as String
                     self.highScoresArray.append(key)
@@ -244,7 +214,7 @@ class SilverTournamentViewController: UIViewController {
                     let highScoreFive = self.highScoresArray[4]
                     self.st1hs5.text = highScoreFive
                     break
-                
+                    
                     
                 default:
                     break
@@ -273,7 +243,7 @@ class SilverTournamentViewController: UIViewController {
             }
             if self.st1hs3.text != "" {
                 let hs3Username = self.st1hs3.text
-               ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(hs3Username!).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! Int
                     let hs3Value = String(value)
                     self.st1hs3s.text = hs3Value
@@ -307,8 +277,11 @@ class SilverTournamentViewController: UIViewController {
             
             
         })
-        //SILVER TOURNAMENT 2 CURRENT RANKINGS
-        ref.child("tournaments").child("standard").child("st2").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
+        print("st1CurrentRankings Done")
+    }
+    func st2CurrentRankings(){
+       let ref = Database.database().reference()
+    ref.child("tournaments").child("standard").child("st2").child("usersPlaying").queryOrderedByValue().queryLimited(toLast: 5).observeSingleEvent(of: .value, with: { (snapshot) in
             
             
             
@@ -413,50 +386,79 @@ class SilverTournamentViewController: UIViewController {
             
             
         })
-        //////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////
-        
-       //Join/Play/St1
+        print("st2CurrentRankings Done")
+    }
+    func st1JoinPlay(){
+        let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st1").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
-            //print(self.username)
-            if snapshot.hasChild(self.username!) && self.s1TimeLeft.text != "Closed"{
+            print(snapshot)
+            //print(self.s1TimeLeft.text)
+            print(self.username!)
+            if snapshot.hasChild(self.username!) && self.s1TimeLeft.text != "Closed" {
                 self.s1JoinButton.isEnabled = false
                 self.s1JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s1PlayButton.isEnabled = true
+                self.s1PlayButton.isUserInteractionEnabled = true
+                //unhide
+                self.s1JoinButton.isHidden = false
+                self.s1PlayButton.isHidden = false
+                print("yes??")
             }
-            else if self.s1TimeLeft.text != "Closed"{
+            else if self.s1TimeLeft.text != "Closed" {
                 self.s1JoinButton.isEnabled = true
+                self.s1JoinButton.isUserInteractionEnabled = true
                 self.s1PlayButton.isEnabled = false
                 self.s1PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
-
+                //unhide
+                self.s1JoinButton.isHidden = false
+                self.s1PlayButton.isHidden = false
+                
+                
             }
-           
+            
             if snapshot.hasChild(self.username!) && self.s1TimeLeft.text == "Closed"{
                 self.s1JoinButton.isEnabled = false
                 self.s1JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
-
+                
                 self.s1PlayButton.isEnabled = false
+                //self.s1PlayButton.isHidden = false
                 self.s1PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 print("or here")
+                //unhide
+                self.s1JoinButton.isHidden = false
+                self.s1PlayButton.isHidden = false
+                print("yes????")
             }
             
             
             
             
         })
-        //join/play st2
+        print("st1JoinPlay Done")
+        st1loadingDone = true
+    }
+    func st2JoinPlay(){
+        let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st2").child("users").observeSingleEvent(of: .value, with: {(snapshot) in
             
-            if snapshot.hasChild(self.username!) && self.s2TimeLeft.text != "Closed"{
+            if snapshot.hasChild(self.username!) && self.s2TimeLeft.text != "Closed" {
                 self.s2JoinButton.isEnabled = false
                 self.s2JoinButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 self.s2PlayButton.isEnabled = true
+                self.s2PlayButton.isUserInteractionEnabled = true
+                //unhide
+                self.s2JoinButton.isHidden = false
+                self.s2PlayButton.isHidden = false
+                print("here??.")
             }
             else if self.s2TimeLeft.text != "Closed" {
                 self.s2JoinButton.isEnabled = true
+                self.s2JoinButton.isUserInteractionEnabled = true
                 self.s2PlayButton.isEnabled = false
                 self.s2PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
+                //unhide
+                self.s2JoinButton.isHidden = false
+                self.s2PlayButton.isHidden = false
                 
             }
             
@@ -467,16 +469,89 @@ class SilverTournamentViewController: UIViewController {
                 self.s2PlayButton.isEnabled = false
                 self.s2PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 print("or here")
+                //unhide
+                self.s2JoinButton.isHidden = false
+                self.s2PlayButton.isHidden = false
             }
             
             
         })
+        print("st2JoinPlay Done")
+        st2loadingDone = true
+        //SVProgressHUD.dismiss()
+    }
+    func st1and2Status(){
+        let ref = Database.database().reference()
+        ref.child("tournaments").child("standard").child("st1").child("status").observe(.value, with: {(snapshot) in
+            let status = snapshot.value as! String
+            if status == "online" {
+                self.s1Status.text = "Online"
+            }
+            if status == "restarting"{
+                self.s1Status.text = "Restarting"
+            }
+            if status == "offline" {
+                self.s1Status.text = "Offline"
+            }
+        })
+        //Status//s2
+        //added s2status restarting
+        ref.child("tournaments").child("standard").child("st2").child("status").observe(.value, with: {(snapshot) in
+            let status = snapshot.value as! String
+            if status == "online" {
+                self.s2Status.text = "Online"
+            }
+            if status == "restarting"{
+                self.s2Status.text = "Restarting"
+            }
+            if status == "offline" {
+                self.s2Status.text = "Offline"
+            }
+        })
+        print("st1 and st2 status Done")
+    }
+    
+    func disableButtons(){
+        self.s1PlayButton.isUserInteractionEnabled = false
+        self.s1JoinButton.isUserInteractionEnabled = false
+        self.s2PlayButton.isUserInteractionEnabled = false
+        self.s2JoinButton.isUserInteractionEnabled = false
+        self.s1JoinButton.isEnabled = false
+        self.s1PlayButton.isEnabled = false
+        self.s2JoinButton.isEnabled = false
+        self.s2PlayButton.isEnabled = false
+    }
+    func unhideButtons(){
+        self.s1PlayButton.isHidden = false
+    }
+    
+     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-    
-    
-    
-    
-    
+        self.username = Auth.auth().currentUser?.displayName
+        SVProgressHUD.setDefaultMaskType(.custom)
+        
+        //SVProgressHUD.setForegroundColor(UIColor.green)
+        //SVProgressHUD.setBackgroundColor(UIColor.yellow)
+        //SVProgressHUD.setBackgroundLayerColor(UIColor.orange)
+        //SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.show()
+        disableButtons()
+        //Set buttons to disabled and then make active
+        let currentDate = Int(NSDate().timeIntervalSince1970)
+        print(currentDate)
+        st1EndDate()
+        st2EndDate()
+        st1and2Status()
+        st1CurrentRankings()
+        st2CurrentRankings()
+        st1JoinPlay()
+        st2JoinPlay()
+        print("bool done")
+        //finishedLoading = true
+        //SVProgressHUD.dismiss()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -492,6 +567,8 @@ class SilverTournamentViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //disableButtons()
+        
         if self.st1hs1.text == self.username {
             st1hs1.layer.borderColor = UIColor.orange.cgColor
             st1hs1.layer.borderWidth = 1.0
@@ -552,9 +629,10 @@ class SilverTournamentViewController: UIViewController {
             }
             
         self.s1TimeLeft.text = timeString(time: timeCount)
-            
+            //SVProgressHUD.dismiss()
         }
         else {
+            print("hello?")
             self.timeCount.invalidate()
             self.s1TimeLeft.text = "Closed"
             print("counter closed")
@@ -562,7 +640,7 @@ class SilverTournamentViewController: UIViewController {
             self.s1JoinButton.isEnabled = false
             self.s1PlayButton.setTitleColor(UIColor .darkGray, for: .disabled)
             self.s1JoinButton.setTitleColor(UIColor .darkGray, for: .disabled)
-            
+            //SVProgressHUD.dismiss()
         }
     }
     @objc func counter2() {
@@ -578,6 +656,7 @@ class SilverTournamentViewController: UIViewController {
             }
            
                 self.s2TimeLeft.text = timeString(time: timeCount2)
+                SVProgressHUD.dismiss()
             
         }
         else {
@@ -588,7 +667,7 @@ class SilverTournamentViewController: UIViewController {
             self.s2JoinButton.isEnabled = false
             self.s2PlayButton.setTitleColor(UIColor .darkGray, for: .disabled)
             self.s2JoinButton.setTitleColor(UIColor .darkGray, for: .disabled)
-            
+           // SVProgressHUD.dismiss()
         }
     }
 

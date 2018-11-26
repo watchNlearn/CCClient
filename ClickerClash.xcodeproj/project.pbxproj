@@ -20,7 +20,6 @@
 		0B9E4B70216D4B08002C8C8A /* St2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */; };
 		0B9E4B7A216D5F89002C8C8A /* St2PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B79216D5F89002C8C8A /* St2PlayGameViewController.swift */; };
 		0BA23F7B2132957B0010082F /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA23F7A2132957B0010082F /* MainGameViewController.swift */; };
-		0BA23F81213373050010082F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BA23F80213373050010082F /* GoogleService-Info.plist */; };
 		0BB9AFCB2165A62400D1538F /* SilverTournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9AFCA2165A62400D1538F /* SilverTournamentViewController.swift */; };
 		0BC9E45721328831002E2E9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E45621328831002E2E9C /* AppDelegate.swift */; };
 		0BC9E45921328831002E2E9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E45821328831002E2E9C /* ViewController.swift */; };
@@ -30,6 +29,7 @@
 		0BC9E46421328831002E2E9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BC9E46221328831002E2E9C /* LaunchScreen.storyboard */; };
 		0BC9E46C2132886B002E2E9C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E46B2132886B002E2E9C /* LoginViewController.swift */; };
 		0BC9E46E21328877002E2E9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E46D21328877002E2E9C /* SignUpViewController.swift */; };
+		0BD58364219D339900EF2342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BD58363219D339900EF2342 /* GoogleService-Info.plist */; };
 		0BED6A352136EE8800A8533E /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED6A342136EE8800A8533E /* PlayGameViewController.swift */; };
 		A443733879D871B1A813D178 /* Pods_ClickerClash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB18BDC36D930B8B42ABA83F /* Pods_ClickerClash.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,6 @@
 		0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St2MenuViewController.swift; sourceTree = "<group>"; };
 		0B9E4B79216D5F89002C8C8A /* St2PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St2PlayGameViewController.swift; sourceTree = "<group>"; };
 		0BA23F7A2132957B0010082F /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
-		0BA23F80213373050010082F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BB9AFCA2165A62400D1538F /* SilverTournamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilverTournamentViewController.swift; sourceTree = "<group>"; };
 		0BC9E45321328831002E2E9C /* ClickerClash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickerClash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC9E45621328831002E2E9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		0BC9E46521328831002E2E9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BC9E46B2132886B002E2E9C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BC9E46D21328877002E2E9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0BD58363219D339900EF2342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BED6A342136EE8800A8533E /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
 		A1B21021BFDE2CFE12B85ECB /* Pods-ClickerClash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickerClash.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClickerClash/Pods-ClickerClash.release.xcconfig"; sourceTree = "<group>"; };
 		AD6341CED4940F0E5C0224F6 /* Pods-ClickerClash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickerClash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClickerClash/Pods-ClickerClash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				0B2DA691219A9D7400876F47 /* leaderboardG-25x.png */,
 				0B2DA689219A908000876F47 /* shopG-25x.png */,
 				0B2DA687219A8F6800876F47 /* profileG-25x.png */,
-				0BA23F80213373050010082F /* GoogleService-Info.plist */,
+				0BD58363219D339900EF2342 /* GoogleService-Info.plist */,
 				0BC9E45621328831002E2E9C /* AppDelegate.swift */,
 				0BC9E45821328831002E2E9C /* ViewController.swift */,
 				0BC9E45A21328831002E2E9C /* Main.storyboard */,
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC9E46421328831002E2E9C /* LaunchScreen.storyboard in Resources */,
-				0BA23F81213373050010082F /* GoogleService-Info.plist in Resources */,
+				0BD58364219D339900EF2342 /* GoogleService-Info.plist in Resources */,
 				0B2DA68A219A908100876F47 /* shopG-25x.png in Resources */,
 				0BC9E46121328831002E2E9C /* Assets.xcassets in Resources */,
 				0B2DA692219A9D7500876F47 /* leaderboardG-25x.png in Resources */,
@@ -246,6 +246,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ClickerClash/Pods-ClickerClash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -253,6 +254,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

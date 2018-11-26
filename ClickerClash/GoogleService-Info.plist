@@ -36,5 +36,7 @@
 	<string>1:556461605358:ios:2ea688fe9d2a0e0f</string>
 	<key>DATABASE_URL</key>
 	<string>https://clickerclash.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-5347695699689963~4557148416</string>
 </dict>
 </plist>

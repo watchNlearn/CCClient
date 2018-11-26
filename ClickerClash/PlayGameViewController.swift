@@ -217,7 +217,7 @@ class PlayGameViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
 
-
+        
         if Auth.auth().currentUser != nil{
             //let uid = Auth.auth().currentUser!.uid
             usernameLabel.text = Auth.auth().currentUser?.displayName

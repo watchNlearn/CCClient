@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import SVProgressHUD
 
 class LeaderboardViewController: UIViewController {
     var ref: DatabaseReference!
@@ -86,7 +87,6 @@ class LeaderboardViewController: UIViewController {
             // for loop to check array count and break out if value DNE
             for i in 0..<10 {
                 if i >= self.highScoresArray.count {
-                    
                     break
                 }
                 
@@ -235,10 +235,9 @@ class LeaderboardViewController: UIViewController {
             }
             //print("no way it breaks here")
             
-            
+            SVProgressHUD.dismiss()
             
         })
-        
         
         
         
@@ -249,11 +248,15 @@ class LeaderboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //updateLeaderboard()
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateLeaderboard()
+        
         //print("hi")
         
     }
