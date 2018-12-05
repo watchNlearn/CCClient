@@ -52,12 +52,15 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
     @IBOutlet weak var s1TimeLeft: UILabel!
     
     @IBOutlet weak var buttonOutlet: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     
     
     
     @IBAction func button(_ sender: UIButton)
     {
+        self.backButton.isEnabled = false
+        self.backButton.setTitleColor(UIColor .gray, for: .disabled)
         // Very first click
         if sender.tag == 0 && timeStarted == false{
             currentCount += 1
@@ -185,10 +188,12 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
             //ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
             //let value = snapshot.value as! Int
             //let StringValue = String(value)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + String(self.clashHighScore), preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
+            self.backButton.isEnabled = true
+
             }
             currentCount = 0
             currentScore.text = String(currentCount)

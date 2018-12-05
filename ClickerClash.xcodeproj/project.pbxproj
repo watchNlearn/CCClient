@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B2BB321B61FF000D79ECC /* PayPalCard.png */; };
 		0B2DA6722199655000876F47 /* PlayGameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DA6712199654F00876F47 /* PlayGameMenuViewController.swift */; };
 		0B2DA676219A2BA200876F47 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DA675219A2BA200876F47 /* ShopViewController.swift */; };
 		0B2DA688219A8F6900876F47 /* profileG-25x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2DA687219A8F6800876F47 /* profileG-25x.png */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1B2BB321B61FF000D79ECC /* PayPalCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PayPalCard.png; sourceTree = "<group>"; };
 		0B2DA6712199654F00876F47 /* PlayGameMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameMenuViewController.swift; sourceTree = "<group>"; };
 		0B2DA675219A2BA200876F47 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		0B2DA687219A8F6800876F47 /* profileG-25x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profileG-25x.png"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		0BC9E45521328831002E2E9C /* ClickerClash */ = {
 			isa = PBXGroup;
 			children = (
+				0B1B2BB321B61FF000D79ECC /* PayPalCard.png */,
 				0B2DA693219AA37400876F47 /* trophyG.png */,
 				0B2DA691219A9D7400876F47 /* leaderboardG-25x.png */,
 				0B2DA689219A908000876F47 /* shopG-25x.png */,
@@ -210,6 +213,7 @@
 				0B2DA68A219A908100876F47 /* shopG-25x.png in Resources */,
 				0BC9E46121328831002E2E9C /* Assets.xcassets in Resources */,
 				0B2DA692219A9D7500876F47 /* leaderboardG-25x.png in Resources */,
+				0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */,
 				0B2DA694219AA37500876F47 /* trophyG.png in Resources */,
 				0B2DA688219A8F6900876F47 /* profileG-25x.png in Resources */,
 				0BC9E45C21328831002E2E9C /* Main.storyboard in Resources */,

@@ -42,10 +42,15 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     
     @IBOutlet weak var buttonOutlet: UIButton!
     
+    @IBOutlet weak var backButton: UIButton!
+    
+    
    // @IBOutlet weak var bannerView: GADBannerView!
     
     @IBAction func button(_ sender: UIButton)
     {
+        self.backButton.isEnabled = false
+        self.backButton.setTitleColor(UIColor .gray, for: .disabled)
         // Very first click
         if sender.tag == 0 && timeStarted == false{
             currentCount += 1
@@ -181,7 +186,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
                 let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + (self.playerHighScoreC.text!), preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
-                
+                self.backButton.isEnabled = true
             }
             
             currentCount = 0
