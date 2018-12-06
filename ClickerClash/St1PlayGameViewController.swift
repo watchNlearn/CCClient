@@ -215,7 +215,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+       
         
     }
     //So far changes -> reference db of UsersPlaying and check if user has played if yes pull his value.. ELSE no value
