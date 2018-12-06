@@ -480,7 +480,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.43137254901960786" blue="0.60784313725490191" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" red="0.082352941176470587" green="0.40784313725490196" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
@@ -2468,7 +2467,7 @@
         <image name="trophyG.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ACB-0O-muy"/>
+        <segue reference="YCp-rW-lyp"/>
         <segue reference="9A9-6h-Sia"/>
         <segue reference="EJe-kc-lkq"/>
         <segue reference="G3z-7u-L8J"/>
