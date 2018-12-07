@@ -615,6 +615,9 @@ class SilverTournamentViewController: UIViewController {
         
         
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @objc func counter() {
         let currentDate = Int(NSDate().timeIntervalSince1970)

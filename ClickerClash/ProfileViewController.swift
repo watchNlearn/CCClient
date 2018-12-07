@@ -115,6 +115,9 @@ class ProfileViewController: UIViewController {
         }
         //SVProgressHUD.dismiss()
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 
     /*
