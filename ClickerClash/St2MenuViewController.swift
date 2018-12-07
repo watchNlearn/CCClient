@@ -358,6 +358,9 @@ class St2MenuViewController: UIViewController {
                 
             }
         }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
         
         
         /*

@@ -339,6 +339,7 @@ class St1MenuViewController: UIViewController {
     }
     
     
+    
     @objc func counter() {
         let currentDate = Int(NSDate().timeIntervalSince1970)
         let timeLeft = endDate - currentDate
@@ -360,6 +361,9 @@ class St1MenuViewController: UIViewController {
             self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
         
         }
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 
