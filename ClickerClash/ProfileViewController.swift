@@ -75,7 +75,7 @@ class ProfileViewController: UIViewController {
             }
             else {
                 self.package.text = "Premium"
-                self.winMultiplier.text = ".15x"
+                self.winMultiplier.text = "1.15x"
                 SVProgressHUD.dismiss()
             }
             
