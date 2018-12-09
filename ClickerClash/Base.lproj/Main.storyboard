@@ -21,6 +21,13 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z36-U8-SiE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1T.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-eh-RNr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jju-GB-NfP">
@@ -69,7 +76,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="-2816"/>
+            <point key="canvasLocation" x="2280.8000000000002" y="-2816.9415292353824"/>
+        </scene>
+        <!--Terms Of Use View Controller-->
+        <scene sceneID="X3X-Dn-APn">
+            <objects>
+                <viewController id="wjH-bH-1wo" customClass="TermsOfUseViewController" customModule="ClickerClash" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ke-np-4vd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="110-DB-7Jp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GY-fE-1eo">
+                                        <rect key="frame" x="8" y="63" width="359" height="537"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <mutableString key="text">These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and WithoutAnyLimits, doing business as WAL (WithoutAnyLimits), concerning your access and use to the mobile app Clicker Clash as well as any other relational form to the site/app. You agree that by accessing the App or Signing Up, you have read, understood, and agreed to be bound by all of these Terms Of Use which WAL reserves rights to change/update. If you do not agree with all of the following terms of use, then you are prohibited from using the App and must discontinue use immediately.
+
+Users of the App Clicker Clash are prohibited from the following but not limited to:
+1. Circumvent, disable, or otherwise interfere with security-related features of the site in any way or form.
+2. Attempts to reverse engineer any portion of the app.
+3. Cheating including but not limited to: external use of a device, assistive software, automation.
+4. Attempts to ‘hack’, glitch or abuse the implacement
+5. Make improper use of our support services or submit false reports of abuse or misconduct
+6.Trick, defraud, or mislead us, especially in any attempt to learn sensitive account information such as user emails.
+
+WithoutAnyLimits only collects and stores user Emails and nothing more. We do not store passwords or any other personal information, any site or application claiming to is illegitimate. Breaking any of the rules above (but not limited to) will result in termination of the users account. If our system detects susceptible cheating or it is determine after an internal investigation any form of cheating was taken on a users account, the account will be terminated immediately. WithoutAnyLimits is not responsible for the continual running of the App Clicker Clash and by accepting, the user acknowledges that we are not responsible for continual payout of users while we will try to offer the payout system, the system is susceptible to downtime or discontinuance.
+
+Disclaimer
+We are doing our best to prepare the content of this App. However, for WithoutAnyLimits cannot warranty the expressions and suggestions of the contents, as well as its accuracy. In addition, to the extent permitted by the law, for WithoutAnyLimits shall not be responsible for any losses and/or damages due to the usage of the information on our website.
+Limitation of Liability
+In no event will we or our directors, employees or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, revenue, loss of data, or other damages. WithoutAnyLimits and Clicker Clash reserves all rights to everything pertaining or in constitution of Clicker Clash and any relations.
+</mutableString>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-m9-jkx">
+                                        <rect key="frame" x="112" y="608" width="150" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.08235294118" green="0.40784313729999999" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <state key="normal" title="I Agree">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Vhm-n1-0YR" kind="show" identifier="tosToSUSegue" id="a6h-Pd-RQV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terms Of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3e-zJ-ZrN">
+                                        <rect key="frame" x="126" y="29" width="122" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.1843137255" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="LxD-OR-N2r"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h1-pD-BTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240.80000000000001" y="-2045.1274362818592"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="49q-Uh-h45">
@@ -135,6 +215,17 @@
                                         <color key="textColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pW-dd-r7d">
+                                        <rect key="frame" x="30" y="300" width="315" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="10"/>
+                                        <state key="normal" title="By signing up you agree to the Terms Of Use found HERE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="wjH-bH-1wo" kind="show" identifier="signUpToTOUSegue" id="sL4-hw-xD2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -191,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgm-Fb-Y3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-2045"/>
+            <point key="canvasLocation" x="989.60000000000002" y="-2045.1274362818592"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Sp6-hx-lor">
@@ -529,6 +620,11 @@
                                             <segue destination="rst-7r-PrL" kind="show" identifier="pgmToPlayGameSegue" id="LFK-8a-rdJ"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1T.png" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-WK-tD5">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -2474,17 +2570,17 @@
     <resources>
         <image name="PayPalCard.png" width="800" height="600"/>
         <image name="leaderboardG-25x.png" width="25" height="25"/>
+        <image name="logo1T.png" width="654" height="654"/>
         <image name="profileG-25x.png" width="25" height="25"/>
         <image name="shopG-25x.png" width="25" height="25"/>
         <image name="trophyG.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cxz-hB-nj6"/>
-        <segue reference="3p7-PS-OZW"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
-        <segue reference="EJe-kc-lkq"/>
-        <segue reference="6kE-fE-WYJ"/>
+        <segue reference="mmK-kc-vsI"/>
+        <segue reference="a6h-Pd-RQV"/>
+        <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
