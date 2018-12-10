@@ -22,8 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1T.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-eh-RNr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CC thick.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-eh-RNr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -102,14 +102,29 @@ Users of the App Clicker Clash are prohibited from the following but not limited
 3. Cheating including but not limited to: external use of a device, assistive software, automation.
 4. Attempts to ‘hack’, glitch or abuse the implacement
 5. Make improper use of our support services or submit false reports of abuse or misconduct
-6.Trick, defraud, or mislead us, especially in any attempt to learn sensitive account information such as user emails.
 
-WithoutAnyLimits only collects and stores user Emails and nothing more. We do not store passwords or any other personal information, any site or application claiming to is illegitimate. Breaking any of the rules above (but not limited to) will result in termination of the users account. If our system detects susceptible cheating or it is determine after an internal investigation any form of cheating was taken on a users account, the account will be terminated immediately. WithoutAnyLimits is not responsible for the continual running of the App Clicker Clash and by accepting, the user acknowledges that we are not responsible for continual payout of users while we will try to offer the payout system, the system is susceptible to downtime or discontinuance.
+WithoutAnyLimits only collects and stores user Emails and nothing more. We do not store passwords or any other personal information, any site or application claiming to is illegitimate. Breaking any of the rules above (but not limited to) will result in termination of the users account. If our system detects susceptible cheating or it is determine after an internal investigation any form of cheating was taken on a users account, the account will be terminated immediately. WithoutAnyLimits is not responsible for the continual running of the App Clicker Clash and by accepting, the user acknowledges that we are not responsible for continual payout of users, we reserve all rights to refuse payout to any persons and while we will try to offer the payout system, the system is susceptible to downtime or discontinuance.
+
+Use License
+When in use of the mobile application on any devices, you must be in strict accordance with the terms and conditions this mobile application license contained in these Terms of Use. You shall not: (1) decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the application; (2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the application; (3) violate any applicable laws, rules or regulations in connection with your access or use of the application; (4) use the application for any revenue generating endavor, commercial enterprise, or other purpose for which it is not designed or intended; (5) use the application to send automated queries to any website or to send any unsolicited commercial e-mail.
+
+Term and Termination
+These Terms of Use shall remain in full force and effect while you use the App. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS OF USE, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE APP (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS OF USE OR ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE APP OR DELETE YOUR ACCOUNT AND ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.
 
 Disclaimer
-We are doing our best to prepare the content of this App. However, for WithoutAnyLimits cannot warranty the expressions and suggestions of the contents, as well as its accuracy. In addition, to the extent permitted by the law, for WithoutAnyLimits shall not be responsible for any losses and/or damages due to the usage of the information on our website.
+We are doing our best to prepare the content of this App. However, for WithoutAnyLimits cannot warranty the expressions and suggestions of the contents, as well as its accuracy. In addition, to the extent permitted by the law, for WithoutAnyLimits shall not be responsible for any losses and/or damages due to the usage of the information on our website or App.
+
 Limitation of Liability
 In no event will we or our directors, employees or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, revenue, loss of data, or other damages. WithoutAnyLimits and Clicker Clash reserves all rights to everything pertaining or in constitution of Clicker Clash and any relations.
+
+Miscellaneous
+These Terms of Use and any policies or operating rules posted by us on the App or in respect to Clicker Clash constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. These Terms of Use operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our control. If any provision or part of a provision of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Use and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms of Use or use of the App. You agree that these Terms of Use will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms of Use.
+
+Contact Us
+For further questions, inquires, or complaints regarding the app please contact us at:
+clickerclash.business@gmail.com
+WithoutAnyLimits 
+Terms of Use in effect and updated as of by: 12/09/2018
 </mutableString>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
@@ -226,6 +241,10 @@ In no event will we or our directors, employees or agents be liable to you or an
                                             <segue destination="wjH-bH-1wo" kind="show" identifier="signUpToTOUSegue" id="sL4-hw-xD2"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CC logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-6W-MrZ">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -620,8 +639,8 @@ In no event will we or our directors, employees or agents be liable to you or an
                                             <segue destination="rst-7r-PrL" kind="show" identifier="pgmToPlayGameSegue" id="LFK-8a-rdJ"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo1T.png" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-WK-tD5">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="502"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CC thick.png" translatesAutoresizingMaskIntoConstraints="NO" id="RuI-WK-tD5">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="505"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -636,7 +655,7 @@ In no event will we or our directors, employees or agents be liable to you or an
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olt-1x-ckd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2353" y="-122"/>
+            <point key="canvasLocation" x="2352.8000000000002" y="-122.78860569715144"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="TJm-jj-N4s">
@@ -2482,6 +2501,12 @@ In no event will we or our directors, employees or agents be liable to you or an
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZp-ge-A9b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CC logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-7i-Yt0">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c35-K2-nqE">
@@ -2564,13 +2589,14 @@ In no event will we or our directors, employees or agents be liable to you or an
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcf-BR-Rbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="-2045"/>
+            <point key="canvasLocation" x="3800.8000000000002" y="-2045.1274362818592"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CC logo.png" width="2000" height="2000"/>
+        <image name="CC thick.png" width="2000" height="2000"/>
         <image name="PayPalCard.png" width="800" height="600"/>
         <image name="leaderboardG-25x.png" width="25" height="25"/>
-        <image name="logo1T.png" width="654" height="654"/>
         <image name="profileG-25x.png" width="25" height="25"/>
         <image name="shopG-25x.png" width="25" height="25"/>
         <image name="trophyG.png" width="25" height="25"/>

@@ -15,6 +15,8 @@
 		0B2DA692219A9D7500876F47 /* leaderboardG-25x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2DA691219A9D7400876F47 /* leaderboardG-25x.png */; };
 		0B2DA694219AA37500876F47 /* trophyG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B2DA693219AA37400876F47 /* trophyG.png */; };
 		0B56C53B21BCF5B400C945B3 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */; };
+		0B56C53D21BE3D6900C945B3 /* CC thick.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B56C53C21BE3D6800C945B3 /* CC thick.png */; };
+		0B56C54121BE42D000C945B3 /* CC logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B56C54021BE42D000C945B3 /* CC logo.png */; };
 		0B642DB0214597ED00C3ECC2 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */; };
 		0B6E6C9F219000D700325ED1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */; };
 		0B9E4B6C2167DF86002C8C8A /* St1MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */; };
@@ -32,7 +34,6 @@
 		0BC9E46C2132886B002E2E9C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E46B2132886B002E2E9C /* LoginViewController.swift */; };
 		0BC9E46E21328877002E2E9C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9E46D21328877002E2E9C /* SignUpViewController.swift */; };
 		0BD58364219D339900EF2342 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BD58363219D339900EF2342 /* GoogleService-Info.plist */; };
-		0BEA812921BB5E7900C89CBE /* logo1T.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BEA812821BB5E7900C89CBE /* logo1T.png */; };
 		0BED6A352136EE8800A8533E /* PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BED6A342136EE8800A8533E /* PlayGameViewController.swift */; };
 		A443733879D871B1A813D178 /* Pods_ClickerClash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB18BDC36D930B8B42ABA83F /* Pods_ClickerClash.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,8 @@
 		0B2DA691219A9D7400876F47 /* leaderboardG-25x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboardG-25x.png"; sourceTree = "<group>"; };
 		0B2DA693219AA37400876F47 /* trophyG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophyG.png; sourceTree = "<group>"; };
 		0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
+		0B56C53C21BE3D6800C945B3 /* CC thick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CC thick.png"; sourceTree = "<group>"; };
+		0B56C54021BE42D000C945B3 /* CC logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CC logo.png"; sourceTree = "<group>"; };
 		0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1MenuViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		0BC9E46B2132886B002E2E9C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0BC9E46D21328877002E2E9C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0BD58363219D339900EF2342 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0BEA812821BB5E7900C89CBE /* logo1T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1T.png; sourceTree = "<group>"; };
 		0BED6A342136EE8800A8533E /* PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameViewController.swift; sourceTree = "<group>"; };
 		A1B21021BFDE2CFE12B85ECB /* Pods-ClickerClash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickerClash.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClickerClash/Pods-ClickerClash.release.xcconfig"; sourceTree = "<group>"; };
 		AD6341CED4940F0E5C0224F6 /* Pods-ClickerClash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClickerClash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClickerClash/Pods-ClickerClash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +116,8 @@
 		0BC9E45521328831002E2E9C /* ClickerClash */ = {
 			isa = PBXGroup;
 			children = (
-				0BEA812821BB5E7900C89CBE /* logo1T.png */,
+				0B56C54021BE42D000C945B3 /* CC logo.png */,
+				0B56C53C21BE3D6800C945B3 /* CC thick.png */,
 				0B1B2BB321B61FF000D79ECC /* PayPalCard.png */,
 				0B2DA693219AA37400876F47 /* trophyG.png */,
 				0B2DA691219A9D7400876F47 /* leaderboardG-25x.png */,
@@ -214,14 +217,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B56C53D21BE3D6900C945B3 /* CC thick.png in Resources */,
 				0BC9E46421328831002E2E9C /* LaunchScreen.storyboard in Resources */,
 				0BD58364219D339900EF2342 /* GoogleService-Info.plist in Resources */,
 				0B2DA68A219A908100876F47 /* shopG-25x.png in Resources */,
+				0B56C54121BE42D000C945B3 /* CC logo.png in Resources */,
 				0BC9E46121328831002E2E9C /* Assets.xcassets in Resources */,
 				0B2DA692219A9D7500876F47 /* leaderboardG-25x.png in Resources */,
 				0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */,
 				0B2DA694219AA37500876F47 /* trophyG.png in Resources */,
-				0BEA812921BB5E7900C89CBE /* logo1T.png in Resources */,
 				0B2DA688219A8F6900876F47 /* profileG-25x.png in Resources */,
 				0BC9E45C21328831002E2E9C /* Main.storyboard in Resources */,
 			);
