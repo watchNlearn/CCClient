@@ -1433,9 +1433,8 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cw0-Tb-334">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw0-Tb-334">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIF-6Y-qjq">
                                         <rect key="frame" x="8" y="28" width="40" height="40"/>
@@ -1745,6 +1744,12 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         </subviews>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1843137255" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="Cw0-Tb-334" firstAttribute="top" secondItem="Nkg-5M-5rB" secondAttribute="top" id="EFf-GV-YpT"/>
+                            <constraint firstItem="Cw0-Tb-334" firstAttribute="leading" secondItem="Uyo-hb-CVN" secondAttribute="leading" id="FwL-Qa-PHQ"/>
+                            <constraint firstItem="Cw0-Tb-334" firstAttribute="trailing" secondItem="Uyo-hb-CVN" secondAttribute="trailing" id="RTK-de-THZ"/>
+                            <constraint firstItem="Cw0-Tb-334" firstAttribute="bottom" secondItem="Uyo-hb-CVN" secondAttribute="bottom" id="nYR-iq-0ht"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uyo-hb-CVN"/>
                     </view>
                     <connections>
@@ -1904,16 +1909,13 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-8v-xWR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTn-w0-f1s">
                                 <rect key="frame" x="16" y="430" width="343" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-8v-xWR">
-                                        <rect key="frame" x="-17" y="-427" width="376" height="664"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ends In:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsX-Hw-EHu">
@@ -2216,6 +2218,12 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         </subviews>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1843137255" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="leading" secondItem="2p4-be-KVh" secondAttribute="leading" id="B4O-Er-HLO"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="trailing" secondItem="2p4-be-KVh" secondAttribute="trailing" id="DcW-V6-rGY"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="top" secondItem="Fwj-Tt-ksZ" secondAttribute="top" id="duC-JX-IUN"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="bottom" secondItem="2p4-be-KVh" secondAttribute="bottom" id="sZK-Mu-yqB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2p4-be-KVh"/>
                     </view>
                     <connections>
@@ -2602,9 +2610,11 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3p7-PS-OZW"/>
+        <segue reference="cxz-hB-nj6"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
-        <segue reference="mmK-kc-vsI"/>
+        <segue reference="RRO-x4-y0U"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>
