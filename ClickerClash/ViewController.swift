@@ -50,11 +50,19 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        /*
         if Auth.auth().currentUser != nil {
             
             self.performSegue(withIdentifier: "menuToMainGameSegue", sender: self)
         }
+         */
         
+    }
+    override func viewWillLayoutSubviews() {
+        if Auth.auth().currentUser != nil {
+            
+            self.performSegue(withIdentifier: "menuToMainGameSegue", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
