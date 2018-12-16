@@ -659,7 +659,15 @@ class SilverTournamentViewController: UIViewController {
             }
            
                 self.s2TimeLeft.text = timeString(time: timeCount2)
+            
+            if CheckInternet.Connection(){
                 SVProgressHUD.dismiss()
+                print("connected")
+            }
+            else{
+                print("No connection")
+            }
+                //SVProgressHUD.dismiss()
             
         }
         else {

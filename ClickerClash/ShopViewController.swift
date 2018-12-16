@@ -107,7 +107,15 @@ class ShopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        if CheckInternet.Connection(){
+            SVProgressHUD.dismiss()
+            print("connected")
+        }
+        else{
+            print("No connection")
+        }
         //self.paypalButtonOut.isEnabled = false
         //self.paypalButtonOut.setTitleColor(UIColor.gray, for: .disabled)
 
@@ -116,8 +124,10 @@ class ShopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let ref = Database.database().reference()
-        let clientuid = Auth.auth().currentUser?.uid
-        ref.child("clashCoins").child(self.clientusername!).child(clientuid!).child("cc").observe(.value, with: {(snapshot) in
+        let clientUid = Auth.auth().currentUser?.uid
+        let clientUsername = Auth.auth().currentUser?.displayName
+        
+        ref.child("clashCoins").child(clientUsername!).child(clientUid!).child("cc").observe(.value, with: {(snapshot) in
             self.clientccValue = snapshot.value as! Int
             print("Got Client CC value")
             

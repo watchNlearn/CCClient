@@ -11,6 +11,8 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import GoogleMobileAds
+import SVProgressHUD
+
 
 class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     var username = Auth.auth().currentUser?.displayName
@@ -219,6 +221,15 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     //So far changes -> reference db of UsersPlaying and check if user has played if yes pull his value.. ELSE no value
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        if CheckInternet.Connection(){
+            SVProgressHUD.dismiss()
+            print("connected")
+        }
+        else{
+            print("No connection")
+        }
         if Auth.auth().currentUser != nil {
             //let uid = Auth.auth().currentUser!.uid
             let ref = Database.database().reference()

@@ -11,6 +11,8 @@ import Foundation
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import SVProgressHUD    
+
 
 class St1MenuViewController: UIViewController {
     var tabBarIndex: Int?
@@ -335,6 +337,18 @@ class St1MenuViewController: UIViewController {
         if self.hs10.text == self.username {
             hs10.layer.borderColor = UIColor.orange.cgColor
             hs10.layer.borderWidth = 1.0
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        if CheckInternet.Connection(){
+            SVProgressHUD.dismiss()
+            print("connected")
+        }
+        else{
+            print("No connection")
         }
     }
     

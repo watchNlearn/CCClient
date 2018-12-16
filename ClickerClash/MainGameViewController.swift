@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseDatabase
-
+import SVProgressHUD
 
 
 
@@ -20,11 +20,19 @@ class MainGameViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
         tabBar.inActiveTintColor()
         selectedIndex = defaultIndex
         // Do any additional setup after loading the view.
         // 
-        
+        if CheckInternet.Connection(){
+            SVProgressHUD.dismiss()
+            print("connected")
+        }
+        else{
+            print("No connection")
+        }
         
         
         

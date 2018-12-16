@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import SVProgressHUD
+
 
 class PlayGameViewController: UIViewController {
     
@@ -23,7 +25,6 @@ class PlayGameViewController: UIViewController {
     var currentCount = -1
     var timeStarted = false
     var newGame = false
-    
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -180,6 +181,7 @@ class PlayGameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         //let uid = Auth.auth().currentUser!.uid
         //let ref = Database.database().reference()
       //  let myString = pHighScore
@@ -190,6 +192,15 @@ class PlayGameViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.show()
+        if CheckInternet.Connection(){
+            SVProgressHUD.dismiss()
+            print("connected")
+        }
+        else{
+            print("No connection")
+        }
         if Auth.auth().currentUser != nil {
         let uid = Auth.auth().currentUser!.uid
         let ref = Database.database().reference()
@@ -216,8 +227,9 @@ class PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
-
+        
         
         if Auth.auth().currentUser != nil{
             //let uid = Auth.auth().currentUser!.uid
@@ -226,7 +238,6 @@ class PlayGameViewController: UIViewController {
            //line code below, checks what score was
            // print(pHighScore)
            
-            
             
         }
         //Sets String of textbox to Int pHighScore

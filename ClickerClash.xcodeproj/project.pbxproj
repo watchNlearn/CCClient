@@ -19,6 +19,7 @@
 		0B56C54F21C33A2500C945B3 /* shopG-30x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B56C54E21C33A2400C945B3 /* shopG-30x.png */; };
 		0B56C55121C33A7400C945B3 /* lbG-30x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B56C55021C33A7300C945B3 /* lbG-30x.png */; };
 		0B56C55F21C5ED4000C945B3 /* clickicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B56C55E21C5ED3D00C945B3 /* clickicon.png */; };
+		0B56C56121C6FD3900C945B3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B56C56021C6FD3900C945B3 /* CheckInternet.swift */; };
 		0B642DB0214597ED00C3ECC2 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */; };
 		0B6E6C9F219000D700325ED1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */; };
 		0B9E4B6C2167DF86002C8C8A /* St1MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */; };
@@ -53,6 +54,7 @@
 		0B56C54E21C33A2400C945B3 /* shopG-30x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopG-30x.png"; sourceTree = "<group>"; };
 		0B56C55021C33A7300C945B3 /* lbG-30x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lbG-30x.png"; sourceTree = "<group>"; };
 		0B56C55E21C5ED3D00C945B3 /* clickicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickicon.png; sourceTree = "<group>"; };
+		0B56C56021C6FD3900C945B3 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1MenuViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */,
 				0B2DA675219A2BA200876F47 /* ShopViewController.swift */,
 				0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */,
+				0B56C56021C6FD3900C945B3 /* CheckInternet.swift */,
 			);
 			path = ClickerClash;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BC9E46C2132886B002E2E9C /* LoginViewController.swift in Sources */,
+				0B56C56121C6FD3900C945B3 /* CheckInternet.swift in Sources */,
 				0B6E6C9F219000D700325ED1 /* ProfileViewController.swift in Sources */,
 				0B2DA6722199655000876F47 /* PlayGameMenuViewController.swift in Sources */,
 				0B9E4B7A216D5F89002C8C8A /* St2PlayGameViewController.swift in Sources */,
