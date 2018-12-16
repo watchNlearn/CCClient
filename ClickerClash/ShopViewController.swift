@@ -12,22 +12,35 @@ import FirebaseAuth
 import FirebaseDatabase
 import SVProgressHUD
 
+
+
+
+struct UserInfo: Encodable {
+    var username: String
+    var uid: String
+    var ccValue: Int
+    var date: Int
+}
+
+
+
 class ShopViewController: UIViewController {
-    var username = Auth.auth().currentUser?.displayName
-    var uid = Auth.auth().currentUser!.uid
-    var ccValue = 0
+    var clientusername = Auth.auth().currentUser?.displayName
+    var clientuid = Auth.auth().currentUser!.uid
+    var clientccValue = 0
     
     @IBOutlet weak var paypalButtonOut: UIButton!
     @IBAction func paypalButton(_ sender: UIButton) {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
         
-            if ccValue >= 1000 {
+            if clientccValue >= 1000 {
                 SVProgressHUD.dismiss()
                 
                 let alertController1 = UIAlertController(title: "Confirmation", message: "Spend 1000 CC?", preferredStyle: UIAlertControllerStyle.alert)
                 alertController1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Continue")
+                    self.sendUserInfoPost()
                 }))
                 
                 alertController1.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action: UIAlertAction!) in
@@ -46,6 +59,52 @@ class ShopViewController: UIViewController {
     
         
     }
+    
+    func sendUserInfoPost() {
+        guard let url = URL(string: "http://127.0.0.1:8000/payout/postrequest/")else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        //guard let httpBody = try? JSONSerialization.data(withJSONObject: sendInformation, options: [])else{return}
+        let currentDate = Int(NSDate().timeIntervalSince1970)
+        
+        
+        
+        let sendInformation = UserInfo(username: clientusername!, uid: clientuid, ccValue: clientccValue, date: currentDate)
+        do {
+            let jsonBody = try JSONEncoder().encode(sendInformation)
+            let jsonString = String(data: jsonBody, encoding: .utf8)
+            print(jsonString as Any)
+            request.httpBody = jsonBody
+            print(jsonBody)
+        }
+        catch {}
+        let session = URLSession.shared
+        session.dataTask(with: request) {(data, response, error)
+            in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+                    print(json)
+                }
+                catch {
+                    print(error)
+                }
+            }
+            }.resume()
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,8 +116,10 @@ class ShopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let ref = Database.database().reference()
-        ref.child("clashCoins").child(self.username!).child(uid).child("cc").observe(.value, with: {(snapshot) in
-            self.ccValue = snapshot.value as! Int
+        let clientuid = Auth.auth().currentUser?.uid
+        ref.child("clashCoins").child(self.clientusername!).child(clientuid!).child("cc").observe(.value, with: {(snapshot) in
+            self.clientccValue = snapshot.value as! Int
+            print("Got Client CC value")
             
             
         })
