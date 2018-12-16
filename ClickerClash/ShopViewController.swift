@@ -15,19 +15,24 @@ import SVProgressHUD
 class ShopViewController: UIViewController {
     var username = Auth.auth().currentUser?.displayName
     var uid = Auth.auth().currentUser!.uid
-
+    var ccValue = 0
+    
     @IBOutlet weak var paypalButtonOut: UIButton!
     @IBAction func paypalButton(_ sender: UIButton) {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
-        let ref = Database.database().reference()
-        ref.child("clashCoins").child(username!).child(uid).child("cc").observe(.value, with: {(snapshot) in
-            let ccValue = snapshot.value as! Int
-            print(ccValue)
+        
             if ccValue >= 1000 {
                 SVProgressHUD.dismiss()
-                let alertController1 = UIAlertController(title: "Confirmation", message: "Are you sure you want to spend 1000 CC?", preferredStyle: UIAlertControllerStyle.alert)
-                alertController1.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: nil))
+                
+                let alertController1 = UIAlertController(title: "Confirmation", message: "Spend 1000 CC?", preferredStyle: UIAlertControllerStyle.alert)
+                alertController1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                    print("Continue")
+                }))
+                
+                alertController1.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action: UIAlertAction!) in
+                    print("Handle Cancel Logic here")
+                }))
                 self.present(alertController1, animated: true, completion: nil)
             }
             else {
@@ -38,20 +43,28 @@ class ShopViewController: UIViewController {
                 print("not enough")
             }
             
-            
+    
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //self.paypalButtonOut.isEnabled = false
+        //self.paypalButtonOut.setTitleColor(UIColor.gray, for: .disabled)
+
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let ref = Database.database().reference()
+        ref.child("clashCoins").child(self.username!).child(uid).child("cc").observe(.value, with: {(snapshot) in
+            self.ccValue = snapshot.value as! Int
             
             
         })
         
         
         
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //self.paypalButtonOut.isEnabled = false
-        //self.paypalButtonOut.setTitleColor(UIColor.gray, for: .disabled)
-
-        // Do any additional setup after loading the view.
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
