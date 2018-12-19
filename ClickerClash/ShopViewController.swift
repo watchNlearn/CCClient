@@ -28,13 +28,15 @@ class ShopViewController: UIViewController {
     var clientusername = Auth.auth().currentUser?.displayName
     var clientuid = Auth.auth().currentUser!.uid
     var clientccValue = 0
+    var payoutLock = true
+    
     
     @IBOutlet weak var paypalButtonOut: UIButton!
     @IBAction func paypalButton(_ sender: UIButton) {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
-        
-            if clientccValue >= 1000 {
+        //User has enough and payout has no lock
+            if clientccValue >= 1000 && self.payoutLock == false {
                 SVProgressHUD.dismiss()
                 
                 let alertController1 = UIAlertController(title: "Confirmation", message: "Spend 1000 CC?", preferredStyle: UIAlertControllerStyle.alert)
@@ -48,6 +50,15 @@ class ShopViewController: UIViewController {
                 }))
                 self.present(alertController1, animated: true, completion: nil)
             }
+        //User has enough but payout is locked
+        if clientccValue >= 1000 && self.payoutLock == true {
+            SVProgressHUD.dismiss()
+            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            print("payment lock is active")
+        }
+        //User doesn't have enough
             else {
                 SVProgressHUD.dismiss()
                 let alertController = UIAlertController(title: "Error Purchasing", message: "Not enough Clash Coins", preferredStyle: UIAlertControllerStyle.alert)
@@ -130,6 +141,17 @@ class ShopViewController: UIViewController {
         ref.child("clashCoins").child(clientUsername!).child(clientUid!).child("cc").observe(.value, with: {(snapshot) in
             self.clientccValue = snapshot.value as! Int
             print("Got Client CC value")
+            ref.child("payout").child("status").observe(.value, with: {(snapshot) in
+                let payoutStatus = snapshot.value as! String
+                print(payoutStatus)
+                if payoutStatus == "locked" {
+                    self.payoutLock = true
+                }
+                else {
+                    self.payoutLock = false
+                }
+                
+            })
             
             
         })
