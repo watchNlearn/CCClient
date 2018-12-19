@@ -147,7 +147,7 @@ class ShopViewController: UIViewController {
                 if payoutStatus == "locked" {
                     self.payoutLock = true
                 }
-                else {
+                else if payoutStatus == "unlocked" {
                     self.payoutLock = false
                 }
                 
