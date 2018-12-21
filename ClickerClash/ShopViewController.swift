@@ -13,7 +13,10 @@ import FirebaseDatabase
 import SVProgressHUD
 
 
-
+struct ServerResponse: Decodable {
+    var status: String
+    var message: String
+}
 
 struct UserInfo: Encodable {
     var username: String
@@ -60,7 +63,7 @@ class ShopViewController: UIViewController {
             print("payment lock is active")
         }
         //User doesn't have enough
-            else {
+            else if clientccValue < 1000 {
                 SVProgressHUD.dismiss()
                 let alertController = UIAlertController(title: "Error Purchasing", message: "Not enough Clash Coins", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -89,24 +92,30 @@ class ShopViewController: UIViewController {
             print(jsonString as Any)
             request.httpBody = jsonBody
             print(jsonBody)
+            print("here")
         }
         catch {}
+        print("no here")
         let session = URLSession.shared
         session.dataTask(with: request) {(data, response, error)
             in
             if let response = response {
                 print(response)
             }
+            
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
-                    print(json)
+                    //let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+                    //print(json)
+                    let serverResponse = try JSONDecoder().decode(ServerResponse.self, from: data)
+                    print(serverResponse.status)
                 }
                 catch {
                     print(error)
                 }
             }
-            }.resume()
+            
+        }.resume()
         
     }
     
