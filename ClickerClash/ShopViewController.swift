@@ -20,6 +20,7 @@ struct UserInfo: Encodable {
     var uid: String
     var ccValue: Int
     var date: Int
+    var clientKey: String
 }
 
 
@@ -81,7 +82,7 @@ class ShopViewController: UIViewController {
         
         
         
-        let sendInformation = UserInfo(username: clientusername!, uid: clientuid, ccValue: clientccValue, date: currentDate)
+        let sendInformation = UserInfo(username: clientusername!, uid: clientuid, ccValue: clientccValue, date: currentDate, clientKey: "yea_im_feeling_like_ray_charles")
         do {
             let jsonBody = try JSONEncoder().encode(sendInformation)
             let jsonString = String(data: jsonBody, encoding: .utf8)
