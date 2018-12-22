@@ -46,6 +46,8 @@ class ShopViewController: UIViewController {
                 let alertController1 = UIAlertController(title: "Confirmation", message: "Spend 1000 CC?", preferredStyle: UIAlertControllerStyle.alert)
                 alertController1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Continue")
+                    SVProgressHUD.setDefaultMaskType(.custom)
+                    SVProgressHUD.show()
                     self.sendUserInfoPost()
                 }))
                 
@@ -109,6 +111,23 @@ class ShopViewController: UIViewController {
                     //print(json)
                     let serverResponse = try JSONDecoder().decode(ServerResponse.self, from: data)
                     print(serverResponse.status)
+                    if serverResponse.status == "passed"{
+                        SVProgressHUD.dismiss()
+                        DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Success!", message: "Check the email associated with your account to claim your reward.", preferredStyle: UIAlertControllerStyle.alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    }
+                    else if serverResponse.status == "failed" {
+                        SVProgressHUD.dismiss()
+                        DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Error!", message: "For further assistance email us at clickerclash.buisness@gmail.com", preferredStyle: UIAlertControllerStyle.alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
                 }
                 catch {
                     print(error)
