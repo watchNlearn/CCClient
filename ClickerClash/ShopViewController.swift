@@ -122,12 +122,20 @@ class ShopViewController: UIViewController {
                         }
                         
                     }
-                    else if serverResponse.status == "failed" {
+                    else if serverResponse.status == "failedPayout" {
                         SVProgressHUD.dismiss()
                         DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Error!", message: "For further assistance email us at clickerclash.buisness@gmail.com", preferredStyle: UIAlertControllerStyle.alert)
+                            let alertController = UIAlertController(title: "Error! Processing Timeout", message: "For further assistance email us at clickerclash.buisness@gmail.com", preferredStyle: UIAlertControllerStyle.alert)
                         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                    else if serverResponse.status == "failedChecks" {
+                        SVProgressHUD.dismiss()
+                        DispatchQueue.main.async {
+                            let alertController = UIAlertController(title: "Error! Invalid Authentication", message: "For further assistance email us at clickerclash.buisness@gmail.com", preferredStyle: UIAlertControllerStyle.alert)
+                            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
                         }
                     }
                 }
