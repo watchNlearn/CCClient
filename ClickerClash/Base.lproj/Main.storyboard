@@ -94,7 +94,7 @@
                                         <rect key="frame" x="8" y="63" width="359" height="537"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <string key="text">These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and WithoutAnyLimits, doing business as WAL (WithoutAnyLimits), concerning your access and use to the mobile app Clicker Clash as well as any other relational form to the site/app. You agree that by accessing the App or Signing Up, you have read, understood, and agreed to be bound by all of these Terms Of Use which WAL reserves rights to change/update. If you do not agree with all of the following terms of use, then you are prohibited from using the App and must discontinue use immediately.
+                                        <mutableString key="text">These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and WithoutAnyLimits, doing business as WAL (WithoutAnyLimits), concerning your access and use to the mobile app Clicker Clash as well as any other relational form to the site/app. You agree that by accessing the App or Signing Up, you have read, understood, and agreed to be bound by all of these Terms Of Use which WAL reserves rights to change/update. If you do not agree with all of the following terms of use, then you are prohibited from using the App and must discontinue use immediately.
 
 Users of the App Clicker Clash are prohibited from the following but not limited to:
 1. Circumvent, disable, or otherwise interfere with security-related features of the site in any way or form.
@@ -115,7 +115,7 @@ Disclaimer
 We are doing our best to prepare the content of this App. However, for WithoutAnyLimits cannot warranty the expressions and suggestions of the contents, as well as its accuracy. In addition, to the extent permitted by the law, for WithoutAnyLimits shall not be responsible for any losses and/or damages due to the usage of the information on our website or App.
 
 Limitation of Liability
-In no event will we or our directors, employees or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, revenue, loss of data, or other damages. WithoutAnyLimits and Clicker Clash reserves all rights to everything pertaining or in constitution of Clicker Clash and any relations.
+In no event will we or our directors, employees or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, revenue, loss of data, or other damages. WithoutAnyLimits is also not responsible for the failure to collect PayPal payments, all disputes concerning this should be taken with PayPal. WithoutAnyLimits and Clicker Clash reserves all rights to everything pertaining or in constitution of Clicker Clash and any relations.
 
 Miscellaneous
 These Terms of Use and any policies or operating rules posted by us on the App or in respect to Clicker Clash constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Terms of Use shall not operate as a waiver of such right or provision. These Terms of Use operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our control. If any provision or part of a provision of these Terms of Use is determined to be unlawful, void, or unenforceable, that provision or part of the provision is deemed severable from these Terms of Use and does not affect the validity and enforceability of any remaining provisions. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms of Use or use of the App. You agree that these Terms of Use will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms of Use.
@@ -125,7 +125,7 @@ For further questions, inquires, or complaints regarding the app please contact 
 clickerclash.business@gmail.com
 WithoutAnyLimits 
 Terms of Use in effect and updated as of by: 12/09/2018
-</string>
+</mutableString>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -223,7 +223,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attention! The email entered here must be the same email as your PayPal to cashout!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFE-HL-NJp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attention! The email entered here must be valid to cashout!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFE-HL-NJp">
                                         <rect key="frame" x="88" y="195" width="210" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -2683,9 +2683,9 @@ Terms of Use in effect and updated as of by: 12/09/2018
     <inferredMetricsTieBreakers>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
-        <segue reference="FTh-nn-53p"/>
+        <segue reference="mmK-kc-vsI"/>
         <segue reference="a6h-Pd-RQV"/>
-        <segue reference="G3z-7u-L8J"/>
+        <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
