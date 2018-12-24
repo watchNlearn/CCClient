@@ -224,40 +224,43 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
         if CheckInternet.Connection(){
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             print("connected")
+            if Auth.auth().currentUser != nil {
+                //let uid = Auth.auth().currentUser!.uid
+                let ref = Database.database().reference()
+                ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if snapshot.hasChild(self.username!){
+                        ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username!).observe(.value, with: {(snapshot) in
+                            let value = snapshot.value as? Int
+                            if value != nil {
+                                let highscore = String(value!)
+                                
+                                self.playerHighScoreC.text = highscore
+                                print("reading st1 score data")
+                                SVProgressHUD.dismiss()
+                            }
+                                //dont think it will ever reach here...
+                            else {
+                                print("No st1 highscore found")
+                                SVProgressHUD.dismiss()
+                            }
+                            
+                            
+                            
+                        })
+                    }
+                    else {
+                        print("User has no recorded score in st1")
+                        SVProgressHUD.dismiss()
+                    }
+                })
+            }
         }
         else{
             print("No connection")
         }
-        if Auth.auth().currentUser != nil {
-            //let uid = Auth.auth().currentUser!.uid
-            let ref = Database.database().reference()
-            ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: { (snapshot) in
-                if snapshot.hasChild(self.username!){
-                    ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username!).observe(.value, with: {(snapshot) in
-                        let value = snapshot.value as? Int
-                        if value != nil {
-                            let highscore = String(value!)
-                            
-                            self.playerHighScoreC.text = highscore
-                            
-                            print("reading st1 score data")
-                        }
-                            //dont think it will ever reach here...
-                        else {
-                            print("No st1 highscore found")
-                        }
-                        
-                        
-                        
-                    })
-                }
-                else {
-                    print("User has no recorded score in st1")
-                }
-            })
-        }
+        
         
         
     }
@@ -282,11 +285,12 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
             //})
             if currentDate < self.endDate {
                 self.timeCount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter2) , userInfo: nil, repeats: true)
-                
+                SVProgressHUD.dismiss()
             }
             else {
                 self.s1TimeLeft.text = "Closed"
                 self.endGameNow = true
+                SVProgressHUD.dismiss()
             }
         })
         //Sets String of textbox to Int pHighScore

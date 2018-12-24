@@ -86,9 +86,16 @@ class PlayGameViewController: UIViewController {
     @objc func counter () {
         //var pHighScore = playerHighScore.text
         //STORES WHAT PHIGHSCORE ACTUALLY IS
-        let myString = playerHighScore.text
-        let myNum:Int? = Int(myString!)
-        pHighScore = myNum!
+        //Old way of getting pHighScore
+        //let myString = playerHighScore.text
+        //let myNum:Int? = Int(myString!)
+        let uid = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference()
+        ref.child("users").child(uid).child("highScore").observe(.value, with: {(snapshot) in
+            self.pHighScore = (snapshot.value as? Int)!
+            
+        })
+        //pHighScore = myNum!
         //print(pHighScore)
         seconds -= 1
         timer.text = String(seconds)
@@ -195,32 +202,34 @@ class PlayGameViewController: UIViewController {
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
         if CheckInternet.Connection(){
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             print("connected")
+            if Auth.auth().currentUser != nil {
+                let uid = Auth.auth().currentUser!.uid
+                let ref = Database.database().reference()
+                ref.child("users").child(uid).child("highScore").observe(.value, with: {(snapshot) in
+                    let value = snapshot.value as? Int
+                    //let highscore = value!["highScore"] as? String
+                    if value != nil {
+                        let highscore = String(value!)
+                        
+                        self.playerHighScore.text = highscore
+                        SVProgressHUD.dismiss()
+                        print("reading score data vwa")
+                    }
+                        
+                    else {
+                        print("No highscore found vwa")
+                    }
+                    
+                })
+            }
         }
         else{
             print("No connection")
         }
-        if Auth.auth().currentUser != nil {
-        let uid = Auth.auth().currentUser!.uid
-        let ref = Database.database().reference()
-        ref.child("users").child(uid).child("highScore").observe(.value, with: {(snapshot) in
-            let value = snapshot.value as? Int
-            //let highscore = value!["highScore"] as? String
-            if value != nil {
-            let highscore = String(value!)
-            
-            self.playerHighScore.text = highscore
-           
-            print("reading score data")
-            }
-            
-            else {
-                print("No highscore found")
-            }
- 
-            })
-        }
+        
+        
         
         
         
@@ -229,12 +238,30 @@ class PlayGameViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
-        
+        //SVProgressHUD.setDefaultMaskType(.custom)
+        //SVProgressHUD.show()
         
         if Auth.auth().currentUser != nil{
             //let uid = Auth.auth().currentUser!.uid
             usernameLabel.text = Auth.auth().currentUser?.displayName
-            
+            let uid = Auth.auth().currentUser!.uid
+            let ref = Database.database().reference()
+            ref.child("users").child(uid).child("highScore").observe(.value, with: {(snapshot) in
+                let value = snapshot.value as? Int
+                //let highscore = value!["highScore"] as? String
+                if value != nil {
+                    let highscore = String(value!)
+                    
+                    self.playerHighScore.text = highscore
+                    SVProgressHUD.dismiss()
+                    print("reading score data vdl")
+                }
+                    
+                else {
+                    print("No highscore found vdl")
+                }
+                
+            })
            //line code below, checks what score was
            // print(pHighScore)
            

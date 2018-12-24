@@ -20,6 +20,7 @@ struct ServerResponse: Decodable {
 
 struct UserInfo: Encodable {
     var username: String
+    var email: String
     var uid: String
     var ccValue: Int
     var date: Int
@@ -31,6 +32,7 @@ struct UserInfo: Encodable {
 class ShopViewController: UIViewController {
     var clientusername = Auth.auth().currentUser?.displayName
     var clientuid = Auth.auth().currentUser!.uid
+    var clientEmail: String = ""
     var clientccValue = 0
     var payoutLock = true
     
@@ -87,7 +89,7 @@ class ShopViewController: UIViewController {
         
         
         
-        let sendInformation = UserInfo(username: clientusername!, uid: clientuid, ccValue: clientccValue, date: currentDate, clientKey: "yea_im_feeling_like_ray_charles")
+        let sendInformation = UserInfo(username: clientusername!, email: clientEmail, uid: clientuid, ccValue: clientccValue, date: currentDate, clientKey: "yea_im_feeling_like_ray_charles")
         do {
             let jsonBody = try JSONEncoder().encode(sendInformation)
             let jsonString = String(data: jsonBody, encoding: .utf8)
@@ -166,7 +168,6 @@ class ShopViewController: UIViewController {
         let ref = Database.database().reference()
         let clientUid = Auth.auth().currentUser?.uid
         let clientUsername = Auth.auth().currentUser?.displayName
-        
         ref.child("clashCoins").child(clientUsername!).child(clientUid!).child("cc").observe(.value, with: {(snapshot) in
             self.clientccValue = snapshot.value as! Int
             print("Got Client CC value")
@@ -183,6 +184,10 @@ class ShopViewController: UIViewController {
             })
             
             
+        })
+        ref.child("users").child(clientUid!).child("email").observe(.value, with: {(snapshot)
+            in
+            self.clientEmail = snapshot.value as! String
         })
         
         

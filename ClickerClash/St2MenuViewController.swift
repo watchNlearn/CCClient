@@ -69,6 +69,9 @@ class St2MenuViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             //11/10/18
+            //SVProgressHUD.setDefaultMaskType(.custom)
+            //SVProgressHUD.show()
+            print("shown vdl")
             self.clashButton.isEnabled = false
             let ref = Database.database().reference()
             let uid = Auth.auth().currentUser?.uid
@@ -172,7 +175,6 @@ class St2MenuViewController: UIViewController {
                     default:
                         break
                     }
-                    
                 }
                 //print("is it breaking here?")
                 //this is outside the for loop
@@ -270,7 +272,7 @@ class St2MenuViewController: UIViewController {
                     })
                 }
                 //print("no way it breaks here")
-                
+                //SVProgressHUD.dismiss()
                 
                 
             })
@@ -278,12 +280,14 @@ class St2MenuViewController: UIViewController {
                 
                 if snapshot.hasChild(self.username!) {
                     self.clashButton.isEnabled = true
+                    
                     //self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
                     
                 }
                 else{
                     self.clashButton.isEnabled = false
                     self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
+                    
                 }
                 
                 
@@ -336,15 +340,37 @@ class St2MenuViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //SVProgressHUD.setDefaultMaskType(.custom)
+        //SVProgressHUD.show()
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
+        print("shown at vwa")
+        
+        let ref = Database.database().reference()
         if CheckInternet.Connection(){
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             print("connected")
+            ref.child("tournaments").child("standard").child("st2").child("usersPlaying").observeSingleEvent(of: .value, with: {(snapshot) in
+                if snapshot.hasChild(self.username!) {
+                    ref.child("tournaments").child("standard").child("st2").child("usersPlaying").child(self.username).observeSingleEvent(of: .value, with: {(snapshot) in
+                        let usersScoreInt = snapshot.value as! Int
+                        let usersScoreString = String(usersScoreInt)
+                        self.usersScore.text = usersScoreString
+                        SVProgressHUD.dismiss()
+                    })
+                    
+                }
+                else {
+                    self.usersScore.text = "0"
+                    SVProgressHUD.dismiss()
+                }
+            })
         }
         else{
             print("No connection")
-        }
+            }
+        
+        
     }
     
     
@@ -364,6 +390,13 @@ class St2MenuViewController: UIViewController {
                     return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
                 }
                 self.st2TimeLeft.text = timeString(time: timeCount)
+                if CheckInternet.Connection(){
+                    //SVProgressHUD.dismiss()
+                    print("connected")
+                }
+                else {
+                    print("no connection")
+                }
             }
             else{
                 self.timeCount.invalidate()

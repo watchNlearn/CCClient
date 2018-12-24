@@ -70,6 +70,8 @@ class St1MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //11/10/18
+        //SVProgressHUD.setDefaultMaskType(.custom)
+        //SVProgressHUD.show()
         self.clashButton.isEnabled = false
         print("hic")
         let ref = Database.database().reference()
@@ -280,12 +282,14 @@ class St1MenuViewController: UIViewController {
             
             if snapshot.hasChild(self.username!) {
                 self.clashButton.isEnabled = true
+                //SVProgressHUD.dismiss()
                 //self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
                
             }
             else{
                 self.clashButton.isEnabled = false
                 self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
+                //SVProgressHUD.dismiss()
             }
             
             
@@ -343,9 +347,28 @@ class St1MenuViewController: UIViewController {
         super.viewWillAppear(animated)
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
+        let ref = Database.database().reference()
         if CheckInternet.Connection(){
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             print("connected")
+            ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: {(snapshot) in
+                if snapshot.hasChild(self.username!) {
+                    ref.child("tournaments").child("standard").child("st1").child("usersPlaying").child(self.username).observeSingleEvent(of: .value, with: {(snapshot) in
+                        let usersScoreInt = snapshot.value as! Int
+                        let usersScoreString = String(usersScoreInt)
+                        self.usersScore.text = usersScoreString
+                        SVProgressHUD.dismiss()
+                        print("dismissed vwa")
+                    })
+                    
+                }
+                else {
+                    self.usersScore.text = "0"
+                    SVProgressHUD.dismiss()
+                    print("dismissed vwa")
+                }
+            })
+            
         }
         else{
             print("No connection")
