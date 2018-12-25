@@ -176,30 +176,32 @@ class ShopViewController: UIViewController {
         let ref = Database.database().reference()
         let clientUid = Auth.auth().currentUser?.uid
         let clientUsername = Auth.auth().currentUser?.displayName
-        ref.child("clashCoins").child(clientUsername!).child(clientUid!).child("cc").observe(.value, with: {(snapshot) in
-            self.clientccValue = snapshot.value as! Int
-            print("Got Client CC value")
-            ref.child("payout").child("status").observe(.value, with: {(snapshot) in
-                let payoutStatus = snapshot.value as! String
-                print(payoutStatus)
-                if payoutStatus == "locked" {
-                    self.payoutLock = true
-                }
-                else if payoutStatus == "unlocked" {
-                    self.payoutLock = false
-                }
-                
-            })
-            
-            
+        ref.child("users").child(clientUid!).child("tWins").observe(.value, with: {(snapshot) in
+            let tWinVal = snapshot.value as! Int
+            if tWinVal == 0 {
+                self.clientccValue = 0
+            }
+            else {
+                ref.child("clashCoins").child(clientUsername!).child(clientUid!).child("cc").observe(.value, with: {(snapshot) in
+                    self.clientccValue = snapshot.value as! Int
+                    print("Got Client CC value")
+                    ref.child("payout").child("status").observe(.value, with: {(snapshot) in
+                        let payoutStatus = snapshot.value as! String
+                        print(payoutStatus)
+                        if payoutStatus == "locked" {
+                            self.payoutLock = true
+                        }
+                        else if payoutStatus == "unlocked" {
+                            self.payoutLock = false
+                        }
+                    })
+                })
+            }
         })
         ref.child("users").child(clientUid!).child("email").observe(.value, with: {(snapshot)
             in
             self.clientEmail = snapshot.value as! String
         })
-        
-        
-        
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

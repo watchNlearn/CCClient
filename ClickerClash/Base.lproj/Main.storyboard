@@ -94,7 +94,7 @@
                                         <rect key="frame" x="8" y="63" width="359" height="537"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <mutableString key="text">These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and WithoutAnyLimits, doing business as WAL (WithoutAnyLimits), concerning your access and use to the mobile app Clicker Clash as well as any other relational form to the site/app. You agree that by accessing the App or Signing Up, you have read, understood, and agreed to be bound by all of these Terms Of Use which WAL reserves rights to change/update. If you do not agree with all of the following terms of use, then you are prohibited from using the App and must discontinue use immediately.
+                                        <string key="text">These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (“you”) and WithoutAnyLimits, doing business as WAL (WithoutAnyLimits), concerning your access and use to the mobile app Clicker Clash as well as any other relational form to the site/app. You agree that by accessing the App or Signing Up, you have read, understood, and agreed to be bound by all of these Terms Of Use which WAL reserves rights to change/update. If you do not agree with all of the following terms of use, then you are prohibited from using the App and must discontinue use immediately.
 
 Users of the App Clicker Clash are prohibited from the following but not limited to:
 1. Circumvent, disable, or otherwise interfere with security-related features of the site in any way or form.
@@ -125,7 +125,7 @@ For further questions, inquires, or complaints regarding the app please contact 
 clickerclash.business@gmail.com
 WithoutAnyLimits 
 Terms of Use in effect and updated as of by: 12/09/2018
-</mutableString>
+</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2681,6 +2681,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sL4-hw-xD2"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
         <segue reference="mmK-kc-vsI"/>
