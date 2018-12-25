@@ -644,6 +644,13 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-fb-Yza">
+                                        <rect key="frame" x="8" y="28" width="359" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="textColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -652,6 +659,9 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         <viewLayoutGuide key="safeArea" id="d1i-OB-1iP"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Play" image="ccIcon-30x.png" id="BJP-g5-gqq"/>
+                    <connections>
+                        <outlet property="alertBannerMessage" destination="5lq-fb-Yza" id="dRs-gA-Cfw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olt-1x-ckd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2681,7 +2691,6 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sL4-hw-xD2"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
         <segue reference="mmK-kc-vsI"/>

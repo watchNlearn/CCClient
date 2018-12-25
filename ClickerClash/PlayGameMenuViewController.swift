@@ -13,10 +13,22 @@ import FirebaseDatabase
 
 
 class PlayGameMenuViewController: UIViewController {
-
+    @IBOutlet weak var alertBannerMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let ref = Database.database().reference()
+        
+        ref.child("notify").child("alertMessage").observe(.value, with: {(snapshot) in
+            let AlertMessage = snapshot.value as! String
+            if AlertMessage == "" {
+                self.alertBannerMessage.text = nil
+            }
+            else {
+                self.alertBannerMessage.text = AlertMessage
+            }
+            
+        })
         // Do any additional setup after loading the view.
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
