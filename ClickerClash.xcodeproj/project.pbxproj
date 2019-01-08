@@ -22,6 +22,7 @@
 		0B56C56121C6FD3900C945B3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B56C56021C6FD3900C945B3 /* CheckInternet.swift */; };
 		0B642DB0214597ED00C3ECC2 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */; };
 		0B6E6C9F219000D700325ED1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */; };
+		0B8F43B221E42E420027FBC4 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F43B121E42E420027FBC4 /* RatesViewController.swift */; };
 		0B9E4B6C2167DF86002C8C8A /* St1MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */; };
 		0B9E4B6E216AF575002C8C8A /* St1PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6D216AF575002C8C8A /* St1PlayGameViewController.swift */; };
 		0B9E4B70216D4B08002C8C8A /* St2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */; };
@@ -57,6 +58,7 @@
 		0B56C56021C6FD3900C945B3 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0B8F43B121E42E420027FBC4 /* RatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1MenuViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6D216AF575002C8C8A /* St1PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1PlayGameViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St2MenuViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				0B2DA675219A2BA200876F47 /* ShopViewController.swift */,
 				0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */,
 				0B56C56021C6FD3900C945B3 /* CheckInternet.swift */,
+				0B8F43B121E42E420027FBC4 /* RatesViewController.swift */,
 			);
 			path = ClickerClash;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				0BED6A352136EE8800A8533E /* PlayGameViewController.swift in Sources */,
 				0BC9E45F21328831002E2E9C /* ClickerClash.xcdatamodeld in Sources */,
 				0BC9E45921328831002E2E9C /* ViewController.swift in Sources */,
+				0B8F43B221E42E420027FBC4 /* RatesViewController.swift in Sources */,
 				0B9E4B6E216AF575002C8C8A /* St1PlayGameViewController.swift in Sources */,
 				0BA23F7B2132957B0010082F /* MainGameViewController.swift in Sources */,
 				0BB9AFCB2165A62400D1538F /* SilverTournamentViewController.swift in Sources */,
