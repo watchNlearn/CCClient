@@ -648,7 +648,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         <rect key="frame" x="97" y="28" width="180" height="40"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="iE9-Hy-L8Y"/>
+                                            <constraint firstAttribute="height" constant="40" id="aUp-Lx-6Hp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -658,7 +658,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         <rect key="frame" x="97" y="365" width="180" height="40"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ipX-UC-hnx"/>
+                                            <constraint firstAttribute="height" constant="40" id="F42-dt-Axd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -668,7 +668,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         <rect key="frame" x="43" y="404" width="288" height="73"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="73" id="jdO-a2-ijF"/>
+                                            <constraint firstAttribute="height" constant="73" id="xdK-IX-nyd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <color key="textColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -677,24 +677,16 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z59-6K-Ke0">
                                         <rect key="frame" x="16" y="76" width="343" height="4"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.54117647059999996" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="KyI-Ov-Hy3"/>
-                                            <constraint firstAttribute="height" constant="4" id="Mz0-fW-PKW"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP6-GO-uGo">
                                         <rect key="frame" x="16" y="344" width="343" height="4"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.54117647059999996" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="YO3-f3-uBh"/>
-                                            <constraint firstAttribute="height" constant="4" id="xxM-oT-JP4"/>
-                                        </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PayPalCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="uqC-Rr-Yzn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="amazoncard.png" translatesAutoresizingMaskIntoConstraints="NO" id="uqC-Rr-Yzn">
                                         <rect key="frame" x="62" y="88" width="250" height="130"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="130" id="e7j-fY-9kO"/>
+                                            <constraint firstAttribute="height" constant="130" id="mUM-LX-FmL"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -703,11 +695,11 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5g-nZ-zYU">
-                                        <rect key="frame" x="107.5" y="265" width="160" height="40"/>
+                                        <rect key="frame" x="108" y="265" width="160" height="40"/>
                                         <color key="backgroundColor" red="0.082352941176470587" green="0.40784313725490196" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NUq-5i-vk2"/>
-                                            <constraint firstAttribute="width" constant="160" id="Sdd-sb-Zd9"/>
+                                            <constraint firstAttribute="height" constant="40" id="EeE-Dd-7pH"/>
+                                            <constraint firstAttribute="width" constant="160" id="H4v-o0-nvQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="1000 CC">
@@ -723,10 +715,10 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-h5-OkF">
-                                        <rect key="frame" x="107.5" y="507" width="160" height="40"/>
+                                        <rect key="frame" x="108" y="507" width="160" height="40"/>
                                         <color key="backgroundColor" red="0.5490196078431373" green="0.76862745098039209" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="buV-Nm-Xhe"/>
+                                            <constraint firstAttribute="height" constant="40" id="Hap-Dy-kcn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="$4.99 USD">
@@ -738,11 +730,11 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$10 PayPal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-Ld-GM2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$10 Amazon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-Ld-GM2">
                                         <rect key="frame" x="97" y="217" width="180" height="40"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="CXt-RZ-x53"/>
+                                            <constraint firstAttribute="height" constant="40" id="JFd-GP-9m0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <color key="textColor" red="0.45098039220000002" green="0.54117647059999996" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -751,43 +743,43 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="trailing" secondItem="2Wg-Ld-GM2" secondAttribute="trailing" id="275-mb-NPP"/>
-                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="top" secondItem="vPX-dn-Nrd" secondAttribute="top" constant="88" id="27d-rl-ifi"/>
-                                    <constraint firstItem="gfl-0Z-D1z" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="43" id="3dj-li-dDS"/>
-                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="top" secondItem="WxG-Sd-npO" secondAttribute="bottom" constant="8" symbolic="YES" id="3u5-HU-Vqe"/>
-                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="62" id="41k-5j-nmc"/>
-                                    <constraint firstItem="gfl-0Z-D1z" firstAttribute="top" secondItem="qP6-GO-uGo" secondAttribute="bottom" constant="56" id="8Xi-Rq-E3o"/>
-                                    <constraint firstAttribute="bottom" secondItem="qqX-h5-OkF" secondAttribute="bottom" constant="71" id="AUn-hp-55J"/>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="centerX" secondItem="vPX-dn-Nrd" secondAttribute="centerX" id="BOc-iD-Dvc"/>
-                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="leading" secondItem="qqX-h5-OkF" secondAttribute="leading" id="DWY-fp-xx6"/>
-                                    <constraint firstItem="2Wg-Ld-GM2" firstAttribute="trailing" secondItem="XJg-bG-oK4" secondAttribute="trailing" id="E38-ZS-bnb"/>
-                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="leading" secondItem="qP6-GO-uGo" secondAttribute="leading" id="GGM-03-i68"/>
-                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="top" secondItem="z59-6K-Ke0" secondAttribute="bottom" constant="8" symbolic="YES" id="HRw-Ve-Tnv"/>
-                                    <constraint firstItem="XJg-bG-oK4" firstAttribute="top" secondItem="qP6-GO-uGo" secondAttribute="bottom" constant="17" id="TLp-bF-2OO"/>
-                                    <constraint firstItem="XJg-bG-oK4" firstAttribute="centerX" secondItem="gfl-0Z-D1z" secondAttribute="centerX" id="TMe-Av-EmO"/>
-                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="trailing" secondItem="qP6-GO-uGo" secondAttribute="trailing" id="UVa-WT-dOF"/>
-                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="trailing" secondItem="qqX-h5-OkF" secondAttribute="trailing" id="XSB-2Z-atq"/>
-                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="top" secondItem="uqC-Rr-Yzn" secondAttribute="bottom" constant="47" id="Ybt-2g-Kzj"/>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="top" secondItem="vPX-dn-Nrd" secondAttribute="topMargin" id="dFy-aY-K92"/>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="centerX" secondItem="z59-6K-Ke0" secondAttribute="centerX" id="dmJ-9B-NTC"/>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="97" id="fxU-Vq-KIi"/>
-                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="centerX" secondItem="uqC-Rr-Yzn" secondAttribute="centerX" id="gvV-Aj-kDu"/>
-                                    <constraint firstItem="qP6-GO-uGo" firstAttribute="top" secondItem="q5g-nZ-zYU" secondAttribute="bottom" constant="39" id="kuR-kR-LlP"/>
-                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="top" secondItem="2Wg-Ld-GM2" secondAttribute="bottom" constant="8" symbolic="YES" id="nMh-zD-sSS"/>
-                                    <constraint firstItem="qqX-h5-OkF" firstAttribute="top" secondItem="gfl-0Z-D1z" secondAttribute="bottom" constant="30" id="oMw-NN-519"/>
-                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="leading" secondItem="2Wg-Ld-GM2" secondAttribute="leading" id="rPl-9s-vP1"/>
-                                    <constraint firstItem="2Wg-Ld-GM2" firstAttribute="leading" secondItem="XJg-bG-oK4" secondAttribute="leading" id="wa8-Ff-DnZ"/>
-                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="centerX" secondItem="qP6-GO-uGo" secondAttribute="centerX" id="yvj-wm-dMG"/>
-                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="16" id="zjx-42-Lce"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="97" id="1c4-78-RSS"/>
+                                    <constraint firstItem="2Wg-Ld-GM2" firstAttribute="leading" secondItem="XJg-bG-oK4" secondAttribute="leading" id="3Q3-Kk-QGK"/>
+                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="top" secondItem="z59-6K-Ke0" secondAttribute="bottom" constant="8" symbolic="YES" id="7Rc-dB-wj6"/>
+                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="16" id="BJD-Pb-TpQ"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="centerX" secondItem="vPX-dn-Nrd" secondAttribute="centerX" id="Bcl-Zj-nzR"/>
+                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="centerX" secondItem="qP6-GO-uGo" secondAttribute="centerX" id="Lrr-nK-OdA"/>
+                                    <constraint firstItem="XJg-bG-oK4" firstAttribute="top" secondItem="qP6-GO-uGo" secondAttribute="bottom" constant="17" id="MOu-6D-SxF"/>
+                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="leading" secondItem="qqX-h5-OkF" secondAttribute="leading" id="NYC-0e-rvX"/>
+                                    <constraint firstItem="2Wg-Ld-GM2" firstAttribute="trailing" secondItem="XJg-bG-oK4" secondAttribute="trailing" id="NlV-GX-O4w"/>
+                                    <constraint firstItem="qP6-GO-uGo" firstAttribute="top" secondItem="q5g-nZ-zYU" secondAttribute="bottom" constant="39" id="Nt1-UN-Kuy"/>
+                                    <constraint firstItem="XJg-bG-oK4" firstAttribute="centerX" secondItem="gfl-0Z-D1z" secondAttribute="centerX" id="Ok6-vA-tpJ"/>
+                                    <constraint firstItem="gfl-0Z-D1z" firstAttribute="top" secondItem="qP6-GO-uGo" secondAttribute="bottom" constant="56" id="UEq-Ee-x5u"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="centerX" secondItem="z59-6K-Ke0" secondAttribute="centerX" id="Uq5-0D-9Ju"/>
+                                    <constraint firstAttribute="bottom" secondItem="qqX-h5-OkF" secondAttribute="bottom" constant="71" id="XFd-Lg-fGY"/>
+                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="top" secondItem="vPX-dn-Nrd" secondAttribute="top" constant="88" id="XZa-Ia-R0K"/>
+                                    <constraint firstItem="qqX-h5-OkF" firstAttribute="top" secondItem="gfl-0Z-D1z" secondAttribute="bottom" constant="30" id="ZZs-G2-tl2"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="trailing" secondItem="2Wg-Ld-GM2" secondAttribute="trailing" id="cFh-C6-8e6"/>
+                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="top" secondItem="WxG-Sd-npO" secondAttribute="bottom" constant="8" symbolic="YES" id="dy5-gn-RPM"/>
+                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="trailing" secondItem="qP6-GO-uGo" secondAttribute="trailing" id="ehp-vg-jGT"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="top" secondItem="vPX-dn-Nrd" secondAttribute="topMargin" id="fgF-iG-FgV"/>
+                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="top" secondItem="uqC-Rr-Yzn" secondAttribute="bottom" constant="47" id="gkf-vm-Ikp"/>
+                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="centerX" secondItem="uqC-Rr-Yzn" secondAttribute="centerX" id="mDL-5Q-sX1"/>
+                                    <constraint firstItem="z59-6K-Ke0" firstAttribute="leading" secondItem="qP6-GO-uGo" secondAttribute="leading" id="mb5-S6-eXA"/>
+                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="top" secondItem="2Wg-Ld-GM2" secondAttribute="bottom" constant="8" symbolic="YES" id="oeQ-zW-fCs"/>
+                                    <constraint firstItem="WxG-Sd-npO" firstAttribute="leading" secondItem="2Wg-Ld-GM2" secondAttribute="leading" id="pbo-uL-GFz"/>
+                                    <constraint firstItem="uqC-Rr-Yzn" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="62" id="uiU-j0-BrR"/>
+                                    <constraint firstItem="gfl-0Z-D1z" firstAttribute="leading" secondItem="vPX-dn-Nrd" secondAttribute="leading" constant="43" id="xeT-4Y-fIN"/>
+                                    <constraint firstItem="q5g-nZ-zYU" firstAttribute="trailing" secondItem="qqX-h5-OkF" secondAttribute="trailing" id="y0M-jw-2B0"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1843137255" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vPX-dn-Nrd" secondAttribute="trailing" id="9Tx-3f-mpZ"/>
-                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="bottom" secondItem="Ocy-Wy-fLn" secondAttribute="bottom" id="YmJ-oY-Icc"/>
-                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="leading" secondItem="NOZ-j6-hR3" secondAttribute="leading" id="dHi-pP-4UC"/>
-                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="top" secondItem="NOZ-j6-hR3" secondAttribute="top" id="fh3-OO-aMg"/>
+                            <constraint firstAttribute="trailing" secondItem="vPX-dn-Nrd" secondAttribute="trailing" id="BmQ-ev-2fc"/>
+                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="bottom" secondItem="Ocy-Wy-fLn" secondAttribute="bottom" id="N6Z-oT-jbe"/>
+                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="top" secondItem="NOZ-j6-hR3" secondAttribute="top" id="evs-7z-xzI"/>
+                            <constraint firstItem="vPX-dn-Nrd" firstAttribute="leading" secondItem="NOZ-j6-hR3" secondAttribute="leading" id="kGg-gf-5HB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ocy-Wy-fLn"/>
                     </view>
@@ -3368,7 +3360,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
     <resources>
         <image name="CC logo.png" width="2000" height="2000"/>
         <image name="CC thick.png" width="2000" height="2000"/>
-        <image name="PayPalCard.png" width="800" height="600"/>
+        <image name="amazoncard.png" width="600" height="600"/>
         <image name="ccIcon-30x.png" width="30" height="30"/>
         <image name="lbG-30x.png" width="30" height="30"/>
         <image name="profileG-30x.png" width="30" height="30"/>
@@ -3376,7 +3368,6 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f0U-09-13g"/>
         <segue reference="7jS-Bi-sAV"/>
         <segue reference="aAt-HG-tIz"/>
         <segue reference="9Tn-nF-cfx"/>

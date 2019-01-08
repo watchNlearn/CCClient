@@ -23,6 +23,7 @@
 		0B642DB0214597ED00C3ECC2 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */; };
 		0B6E6C9F219000D700325ED1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */; };
 		0B8F43B221E42E420027FBC4 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8F43B121E42E420027FBC4 /* RatesViewController.swift */; };
+		0B8F43B621E44D450027FBC4 /* amazoncard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B8F43B521E44D450027FBC4 /* amazoncard.png */; };
 		0B9E4B6C2167DF86002C8C8A /* St1MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */; };
 		0B9E4B6E216AF575002C8C8A /* St1PlayGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6D216AF575002C8C8A /* St1PlayGameViewController.swift */; };
 		0B9E4B70216D4B08002C8C8A /* St2MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */; };
@@ -59,6 +60,7 @@
 		0B642DAF214597ED00C3ECC2 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		0B6E6C9E219000D700325ED1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0B8F43B121E42E420027FBC4 /* RatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
+		0B8F43B521E44D450027FBC4 /* amazoncard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amazoncard.png; sourceTree = "<group>"; };
 		0B9E4B6B2167DF86002C8C8A /* St1MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1MenuViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6D216AF575002C8C8A /* St1PlayGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St1PlayGameViewController.swift; sourceTree = "<group>"; };
 		0B9E4B6F216D4B08002C8C8A /* St2MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = St2MenuViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				0B56C54021BE42D000C945B3 /* CC logo.png */,
 				0B56C53C21BE3D6800C945B3 /* CC thick.png */,
 				0B1B2BB321B61FF000D79ECC /* PayPalCard.png */,
+				0B8F43B521E44D450027FBC4 /* amazoncard.png */,
 				0B56C55021C33A7300C945B3 /* lbG-30x.png */,
 				0B56C54E21C33A2400C945B3 /* shopG-30x.png */,
 				0B56C54A21C3390E00C945B3 /* trophyG-30x.png */,
@@ -240,6 +243,7 @@
 				0B56C54B21C3390F00C945B3 /* trophyG-30x.png in Resources */,
 				0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */,
 				0B56C55121C33A7400C945B3 /* lbG-30x.png in Resources */,
+				0B8F43B621E44D450027FBC4 /* amazoncard.png in Resources */,
 				0B56C54921C3389200C945B3 /* ccIcon-30x.png in Resources */,
 				0BC9E45C21328831002E2E9C /* Main.storyboard in Resources */,
 			);
