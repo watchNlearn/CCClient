@@ -26,6 +26,7 @@ class PlayGameViewController: UIViewController {
     var timeStarted = false
     var newGame = false
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var usernameLabel: UILabel!
     
     
@@ -236,6 +237,9 @@ class PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         NotificationCenter.default.addObserver(self, selector: #selector(PlayGameViewController.resetTimer), name: NSNotification.Name(rawValue: "ResetTimer"), object: nil)
         //SVProgressHUD.setDefaultMaskType(.custom)

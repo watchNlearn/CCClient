@@ -3156,12 +3156,21 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McI-hI-vGz" customClass="GADBannerView">
+                                        <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0FF-aC-CDa"/>
+                                            <constraint firstAttribute="width" constant="320" id="f6b-E8-Shg"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="W9X-Jt-3h2" firstAttribute="top" secondItem="HwF-nP-lR3" secondAttribute="top" constant="36" id="5qZ-n6-sjP"/>
                                     <constraint firstItem="LVu-V2-F0e" firstAttribute="leading" secondItem="YlU-X2-0xy" secondAttribute="leading" id="A7A-Ry-f4s"/>
+                                    <constraint firstAttribute="trailing" secondItem="McI-hI-vGz" secondAttribute="trailing" constant="28" id="CsL-KQ-Xi3"/>
                                     <constraint firstItem="W9X-Jt-3h2" firstAttribute="centerX" secondItem="HwF-nP-lR3" secondAttribute="centerX" id="Ftm-cc-HSz"/>
                                     <constraint firstItem="YlU-X2-0xy" firstAttribute="centerX" secondItem="ulm-h7-VjO" secondAttribute="centerX" id="K56-4r-PxJ"/>
                                     <constraint firstItem="YlU-X2-0xy" firstAttribute="top" secondItem="Knp-IW-1Ad" secondAttribute="bottom" constant="8" symbolic="YES" id="Ngk-Pz-DSw"/>
@@ -3170,6 +3179,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                     <constraint firstItem="Y1z-Hc-nyk" firstAttribute="leading" secondItem="HwF-nP-lR3" secondAttribute="leading" constant="97" id="Uza-sc-yU4"/>
                                     <constraint firstItem="Knp-IW-1Ad" firstAttribute="top" secondItem="LVu-V2-F0e" secondAttribute="bottom" constant="4" id="XMS-3Q-2PJ"/>
                                     <constraint firstItem="Y1z-Hc-nyk" firstAttribute="top" secondItem="W9X-Jt-3h2" secondAttribute="bottom" constant="2" id="Zpt-vA-OmM"/>
+                                    <constraint firstAttribute="bottom" secondItem="McI-hI-vGz" secondAttribute="bottom" id="c4a-dm-EUz"/>
                                     <constraint firstItem="W9X-Jt-3h2" firstAttribute="trailing" secondItem="LVu-V2-F0e" secondAttribute="trailing" id="dPK-hT-Hke"/>
                                     <constraint firstItem="Ib2-0E-4yl" firstAttribute="leading" secondItem="HwF-nP-lR3" secondAttribute="leadingMargin" id="eWd-bE-jXc"/>
                                     <constraint firstItem="Y1z-Hc-nyk" firstAttribute="trailing" secondItem="Knp-IW-1Ad" secondAttribute="trailing" id="fwR-PA-sQ4"/>
@@ -3177,6 +3187,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                     <constraint firstItem="LVu-V2-F0e" firstAttribute="leading" secondItem="HwF-nP-lR3" secondAttribute="leading" constant="94" id="hsN-hu-LCi"/>
                                     <constraint firstItem="LVu-V2-F0e" firstAttribute="top" secondItem="Y1z-Hc-nyk" secondAttribute="bottom" constant="8" symbolic="YES" id="jbs-a7-eG9"/>
                                     <constraint firstItem="LVu-V2-F0e" firstAttribute="trailing" secondItem="YlU-X2-0xy" secondAttribute="trailing" id="mSx-DS-NxC"/>
+                                    <constraint firstItem="McI-hI-vGz" firstAttribute="leading" secondItem="HwF-nP-lR3" secondAttribute="leading" constant="27" id="neb-8w-0BY"/>
                                     <constraint firstItem="ulm-h7-VjO" firstAttribute="top" secondItem="YlU-X2-0xy" secondAttribute="bottom" constant="32" id="qPo-40-0mP"/>
                                     <constraint firstItem="ulm-h7-VjO" firstAttribute="centerX" secondItem="ikc-Vq-WgF" secondAttribute="centerX" id="rRu-fd-kar"/>
                                     <constraint firstItem="ikc-Vq-WgF" firstAttribute="top" secondItem="ulm-h7-VjO" secondAttribute="bottom" constant="37" id="sCo-0u-cEJ"/>
@@ -3197,6 +3208,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="McI-hI-vGz" id="KwX-L0-vUa"/>
                         <outlet property="currentScore" destination="Knp-IW-1Ad" id="J6i-1D-oYZ"/>
                         <outlet property="playerHighScore" destination="Y1z-Hc-nyk" id="Id5-oz-j97"/>
                         <outlet property="timer" destination="ikc-Vq-WgF" id="FrK-oM-Vg9"/>
@@ -3368,10 +3380,9 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f0U-09-13g"/>
         <segue reference="7jS-Bi-sAV"/>
         <segue reference="aAt-HG-tIz"/>
-        <segue reference="9Tn-nF-cfx"/>
+        <segue reference="FTh-nn-53p"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="G3z-7u-L8J"/>
     </inferredMetricsTieBreakers>
