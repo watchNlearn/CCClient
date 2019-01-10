@@ -15,6 +15,7 @@ import SVProgressHUD
 
 
 class St1MenuViewController: UIViewController {
+    var myGroup = DispatchGroup()
     var tabBarIndex: Int?
     var ref: DatabaseReference!
     var username: String! = nil
@@ -72,6 +73,7 @@ class St1MenuViewController: UIViewController {
         //11/10/18
         //SVProgressHUD.setDefaultMaskType(.custom)
         //SVProgressHUD.show()
+        //myGroup.enter()
         self.clashButton.isEnabled = false
         print("hic")
         let ref = Database.database().reference()
@@ -296,6 +298,7 @@ class St1MenuViewController: UIViewController {
             
         })
         
+        //myGroup.leave()
         
         
         // Do any additional setup after loading the view.
@@ -373,6 +376,7 @@ class St1MenuViewController: UIViewController {
         else{
             print("No connection")
         }
+        
     }
     
     
@@ -398,6 +402,7 @@ class St1MenuViewController: UIViewController {
             self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
         
         }
+        //SVProgressHUD.dismiss()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

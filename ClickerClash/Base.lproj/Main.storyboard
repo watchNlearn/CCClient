@@ -695,7 +695,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5g-nZ-zYU">
-                                        <rect key="frame" x="108" y="265" width="160" height="40"/>
+                                        <rect key="frame" x="107.5" y="265" width="160" height="40"/>
                                         <color key="backgroundColor" red="0.082352941176470587" green="0.40784313725490196" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="EeE-Dd-7pH"/>
@@ -715,7 +715,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-h5-OkF">
-                                        <rect key="frame" x="108" y="507" width="160" height="40"/>
+                                        <rect key="frame" x="107.5" y="507" width="160" height="40"/>
                                         <color key="backgroundColor" red="0.5490196078431373" green="0.76862745098039209" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Hap-Dy-kcn"/>
@@ -3368,6 +3368,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="f0U-09-13g"/>
         <segue reference="7jS-Bi-sAV"/>
         <segue reference="aAt-HG-tIz"/>
         <segue reference="9Tn-nF-cfx"/>
