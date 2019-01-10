@@ -19,7 +19,12 @@ class SilverTournamentViewController: UIViewController {
     var st1loadingDone = false
     var st2loadingDone = false
     //var username: String! = nil
-    var finishedLoading = false
+    var finishedLoading = false {
+        didSet {
+            SVProgressHUD.dismiss()
+        }
+    }
+    var hasConnection = false
     var username = Auth.auth().currentUser?.displayName
     var endDate: Int! = nil
     var endDate2: Int! = nil
@@ -163,7 +168,8 @@ class SilverTournamentViewController: UIViewController {
                 self.s2PlayButton.isUserInteractionEnabled = false
                 self.s2PlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 //self.s1Status.text = "Offline"
-                SVProgressHUD.dismiss()
+                //SVProgressHUD.dismiss()
+                //comment out for now if change doesnt work comment in!!
             }
         })
         print("st2EndDate Done")
@@ -661,7 +667,9 @@ class SilverTournamentViewController: UIViewController {
                 self.s2TimeLeft.text = timeString(time: timeCount2)
             
             if CheckInternet.Connection(){
-                SVProgressHUD.dismiss()
+                //SVProgressHUD.dismiss()
+                //comment out for now if doesnt work comment in!!
+                self.hasConnection = true
                 print("connected")
             }
             else{
@@ -679,6 +687,10 @@ class SilverTournamentViewController: UIViewController {
             self.s2PlayButton.setTitleColor(UIColor .darkGray, for: .disabled)
             self.s2JoinButton.setTitleColor(UIColor .darkGray, for: .disabled)
            // SVProgressHUD.dismiss()
+        }
+        if self.st1hs1.text != "" && self.st2hs1.text != "" && self.hasConnection == true {
+            print("this is finishedLoading Check")
+            finishedLoading = true
         }
     }
 
