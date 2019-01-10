@@ -16,17 +16,23 @@ import SVProgressHUD
 
 class St2MenuViewController: UIViewController {
     var tabBarIndex: Int?
-        var ref: DatabaseReference!
-        var username: String! = nil
-        var endDate: Int! = nil
-        var timeCount = Timer()
-        var currentDate = NSDate().timeIntervalSince1970
-        var highScoresArray = [String]()
-        var myString: String = ""
+    var ref: DatabaseReference!
+    var finishedLoading = false {
+        didSet {
+            SVProgressHUD.dismiss()
+        }
+    }
+    var hasConnection = false
+    var username: String! = nil
+    var endDate: Int! = nil
+    var timeCount = Timer()
+    var currentDate = NSDate().timeIntervalSince1970
+    var highScoresArray = [String]()
+    var myString: String = ""
         
-        @IBOutlet weak var st2TimeLeft: UILabel!
-        @IBOutlet weak var clashButton: UIButton!
-        @IBOutlet weak var usersScore: UILabel!
+    @IBOutlet weak var st2TimeLeft: UILabel!
+    @IBOutlet weak var clashButton: UIButton!
+    @IBOutlet weak var usersScore: UILabel!
     
         //ST2 USERNAME LABELS//
     @IBOutlet weak var hs1: UILabel!
@@ -349,6 +355,7 @@ class St2MenuViewController: UIViewController {
         let ref = Database.database().reference()
         if CheckInternet.Connection(){
             //SVProgressHUD.dismiss()
+            self.hasConnection = true
             print("connected")
             ref.child("tournaments").child("standard").child("st2").child("usersPlaying").observeSingleEvent(of: .value, with: {(snapshot) in
                 if snapshot.hasChild(self.username!) {
@@ -356,13 +363,15 @@ class St2MenuViewController: UIViewController {
                         let usersScoreInt = snapshot.value as! Int
                         let usersScoreString = String(usersScoreInt)
                         self.usersScore.text = usersScoreString
-                        SVProgressHUD.dismiss()
+                        //SVProgressHUD.dismiss()
+                        //commented 1/9/19
                     })
                     
                 }
                 else {
                     self.usersScore.text = "0"
-                    SVProgressHUD.dismiss()
+                    //SVProgressHUD.dismiss()
+                    //commented 1/9/19
                 }
             })
         }
@@ -390,13 +399,6 @@ class St2MenuViewController: UIViewController {
                     return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
                 }
                 self.st2TimeLeft.text = timeString(time: timeCount)
-                if CheckInternet.Connection(){
-                    //SVProgressHUD.dismiss()
-                    print("connected")
-                }
-                else {
-                    print("no connection")
-                }
             }
             else{
                 self.timeCount.invalidate()
@@ -405,9 +407,18 @@ class St2MenuViewController: UIViewController {
                 self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 
             }
+            if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true {
+                print("finished loading st2")
+                self.finishedLoading = true
+            }
         }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("leaving st2 view")
+        self.timeCount.invalidate()
     }
         
         

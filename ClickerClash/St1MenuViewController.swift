@@ -18,6 +18,12 @@ class St1MenuViewController: UIViewController {
     var myGroup = DispatchGroup()
     var tabBarIndex: Int?
     var ref: DatabaseReference!
+    var finishedLoading = false {
+        didSet {
+           SVProgressHUD.dismiss()
+        }
+    }
+    var hasConnection = false
     var username: String! = nil
     var endDate: Int! = nil
     var timeCount = Timer()
@@ -353,6 +359,7 @@ class St1MenuViewController: UIViewController {
         let ref = Database.database().reference()
         if CheckInternet.Connection(){
             //SVProgressHUD.dismiss()
+            self.hasConnection = true
             print("connected")
             ref.child("tournaments").child("standard").child("st1").child("usersPlaying").observeSingleEvent(of: .value, with: {(snapshot) in
                 if snapshot.hasChild(self.username!) {
@@ -360,14 +367,16 @@ class St1MenuViewController: UIViewController {
                         let usersScoreInt = snapshot.value as! Int
                         let usersScoreString = String(usersScoreInt)
                         self.usersScore.text = usersScoreString
-                        SVProgressHUD.dismiss()
+                        //SVProgressHUD.dismiss()
+                        //comment out for now
                         print("dismissed vwa")
                     })
                     
                 }
                 else {
                     self.usersScore.text = "0"
-                    SVProgressHUD.dismiss()
+                    //SVProgressHUD.dismiss()
+                    //comment out for now
                     print("dismissed vwa")
                 }
             })
@@ -402,12 +411,20 @@ class St1MenuViewController: UIViewController {
             self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
         
         }
+        if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true {
+            print("finished loading st1")
+            self.finishedLoading = true
+        }
         //SVProgressHUD.dismiss()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("leaving st1 view")
+        self.timeCount.invalidate()
+    }
 
     /*
     // MARK: - Navigation
