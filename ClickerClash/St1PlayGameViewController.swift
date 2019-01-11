@@ -34,6 +34,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
     @IBOutlet weak var usernameLabel: UILabel!
     
     
+    @IBOutlet weak var bannerView: GADBannerView!
     
     
     @IBOutlet weak var currentScore: UILabel!
@@ -223,6 +224,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
         super.viewWillAppear(animated)
         SVProgressHUD.setDefaultMaskType(.custom)
         SVProgressHUD.show()
+        
         if CheckInternet.Connection(){
             //SVProgressHUD.dismiss()
             print("connected")
@@ -266,6 +268,9 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         let request = GADRequest()

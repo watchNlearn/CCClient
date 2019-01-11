@@ -2421,6 +2421,11 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             <segue destination="uF6-B4-Xj1" kind="show" identifier="st2PlayToCRSegue" id="9A9-6h-Sia"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oD3-La-8S2" customClass="GADBannerView">
+                                        <rect key="frame" x="29" y="617" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -2511,6 +2516,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                     </view>
                     <connections>
                         <outlet property="backButton" destination="419-RS-I5M" id="bom-wG-6Xy"/>
+                        <outlet property="bannerView" destination="oD3-La-8S2" id="o4t-Xt-rcr"/>
                         <outlet property="buttonOutlet" destination="WDM-sL-APK" id="rJR-fQ-7SG"/>
                         <outlet property="currentScore" destination="FoZ-Ol-3Bs" id="DI0-B5-GrP"/>
                         <outlet property="playerHighScoreC" destination="2J0-AE-FLZ" id="qcQ-tL-Jhg"/>
@@ -2904,7 +2910,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-Vh-CER">
-                                        <rect key="frame" x="117" y="470" width="140" height="54"/>
+                                        <rect key="frame" x="117.5" y="470" width="140" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.5490196078431373" green="0.76862745098039209" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
@@ -2928,6 +2934,11 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             <segue destination="QuD-Ki-DFe" kind="show" identifier="st1PlayToCRSegue" id="ACB-0O-muy"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeF-Cn-4cG" customClass="GADBannerView">
+                                        <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -3010,6 +3021,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Y2Z-6S-3MZ" id="g6k-xw-c81"/>
+                        <outlet property="bannerView" destination="DeF-Cn-4cG" id="ycQ-tg-kbb"/>
                         <outlet property="buttonOutlet" destination="f8h-Y5-08Z" id="dmS-Uf-OGg"/>
                         <outlet property="currentScore" destination="B8x-9N-tI7" id="WbX-21-j8E"/>
                         <outlet property="playerHighScoreC" destination="UBv-bJ-peC" id="7bb-TQ-Uc9"/>
@@ -3380,8 +3392,8 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7jS-Bi-sAV"/>
-        <segue reference="aAt-HG-tIz"/>
+        <segue reference="ACB-0O-muy"/>
+        <segue reference="9A9-6h-Sia"/>
         <segue reference="FTh-nn-53p"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="G3z-7u-L8J"/>

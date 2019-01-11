@@ -32,6 +32,8 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     var currentDate = NSDate().timeIntervalSince1970
     var endGameNow = false
     
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var currentScore: UILabel!
@@ -269,6 +271,9 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
         //interstitial.delegate = self as? GADInterstitialDelegate
         //interstitial = createAndLoadInterstitial()
         //interstitial.delegate = self as? GADInterstitialDelegate
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         let request = GADRequest()
