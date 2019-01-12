@@ -59,7 +59,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
         if sender.tag == 0 && timeStarted == false{
             currentCount += 1
             currentScore.text = String(currentCount)
-            
+            //init the 5sec countdown
             timecount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter) , userInfo: nil, repeats: true)
             timeStarted = true
             
