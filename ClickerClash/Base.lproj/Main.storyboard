@@ -2050,9 +2050,8 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pH-0q-xnb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pH-0q-xnb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1st Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvd-8R-DNl">
                                         <rect key="frame" x="78" y="140" width="90" height="20"/>
@@ -2239,6 +2238,12 @@ Terms of Use in effect and updated as of by: 12/09/2018
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.074509803921568626" green="0.18431372549019609" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4pH-0q-xnb" firstAttribute="bottom" secondItem="1UF-Da-dWD" secondAttribute="bottom" id="1cd-9C-J3d"/>
+                            <constraint firstItem="4pH-0q-xnb" firstAttribute="trailing" secondItem="1UF-Da-dWD" secondAttribute="trailing" id="Dya-i6-kfY"/>
+                            <constraint firstItem="4pH-0q-xnb" firstAttribute="top" secondItem="pUv-QA-GJs" secondAttribute="top" id="XNu-6Z-gmu"/>
+                            <constraint firstItem="4pH-0q-xnb" firstAttribute="leading" secondItem="1UF-Da-dWD" secondAttribute="leading" id="dDx-Z8-TD8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1UF-Da-dWD"/>
                     </view>
                     <connections>
@@ -3628,7 +3633,6 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f0U-09-13g"/>
         <segue reference="YCp-rW-lyp"/>
         <segue reference="EQm-7f-s55"/>
         <segue reference="9Tn-nF-cfx"/>
