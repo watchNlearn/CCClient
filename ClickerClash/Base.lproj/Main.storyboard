@@ -2908,7 +2908,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bp4-mV-tHE">
-                                <rect key="frame" x="87" y="558" width="200" height="50"/>
+                                <rect key="frame" x="87" y="558" width="201" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.40784313729999999" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
@@ -3106,10 +3106,10 @@ Terms of Use in effect and updated as of by: 12/09/2018
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1843137255" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="tzF-8v-xWR" firstAttribute="leading" secondItem="2p4-be-KVh" secondAttribute="leading" id="B4O-Er-HLO"/>
-                            <constraint firstItem="tzF-8v-xWR" firstAttribute="trailing" secondItem="2p4-be-KVh" secondAttribute="trailing" id="DcW-V6-rGY"/>
-                            <constraint firstItem="tzF-8v-xWR" firstAttribute="top" secondItem="Fwj-Tt-ksZ" secondAttribute="top" id="duC-JX-IUN"/>
-                            <constraint firstItem="tzF-8v-xWR" firstAttribute="bottom" secondItem="2p4-be-KVh" secondAttribute="bottom" id="sZK-Mu-yqB"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="top" secondItem="Fwj-Tt-ksZ" secondAttribute="top" id="6Al-zd-eSd"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="trailing" secondItem="2p4-be-KVh" secondAttribute="trailing" id="Web-7c-9QQ"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="bottom" secondItem="2p4-be-KVh" secondAttribute="bottom" id="f32-yG-hgJ"/>
+                            <constraint firstItem="tzF-8v-xWR" firstAttribute="leading" secondItem="2p4-be-KVh" secondAttribute="leading" id="tNF-jG-EuG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2p4-be-KVh"/>
                     </view>
@@ -3653,7 +3653,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
     <inferredMetricsTieBreakers>
         <segue reference="YCp-rW-lyp"/>
         <segue reference="EQm-7f-s55"/>
-        <segue reference="9Tn-nF-cfx"/>
+        <segue reference="RRO-x4-y0U"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="G3z-7u-L8J"/>
     </inferredMetricsTieBreakers>
