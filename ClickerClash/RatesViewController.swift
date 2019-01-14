@@ -20,12 +20,14 @@ class RatesViewController: UIViewController {
     @IBOutlet weak var st1r3: UILabel!
     @IBOutlet weak var st1r4: UILabel!
     @IBOutlet weak var st1r5: UILabel!
+    @IBOutlet weak var st1Reset: UILabel!
     
     @IBOutlet weak var st2r1: UILabel!
     @IBOutlet weak var st2r2: UILabel!
     @IBOutlet weak var st2r3: UILabel!
     @IBOutlet weak var st2r4: UILabel!
     @IBOutlet weak var st2r5: UILabel!
+    @IBOutlet weak var st2Reset: UILabel!
     
     @IBAction func backButton(_ sender: UIButton) {
         self.loadTabBarController(atIndex: 1)
@@ -44,6 +46,17 @@ class RatesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let ref = Database.database().reference()
+       
+        ref.child("rates").child("st1").child("reset").observe(.value, with: {(snapshot) in
+            let value = snapshot.value as! String
+            self.st1Reset.text = String(value)
+        })
+        ref.child("rates").child("st2").child("reset").observe(.value, with: {(snapshot) in
+            let value = snapshot.value as! String
+            self.st2Reset.text = String(value)
+        })
+        
+        
         ref.child("rates").child("st1").child("1st").observe(.value, with: {(snapshot) in
             let value = snapshot.value as! Int
             self.st1r1.text = String(value)
