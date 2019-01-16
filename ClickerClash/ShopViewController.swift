@@ -30,7 +30,8 @@ struct UserInfo: Encodable {
 
 
 class ShopViewController: UIViewController {
-    var clientusername = Auth.auth().currentUser?.displayName
+    //added ! to clientUsername instead of ? forced unwrapped....
+    var clientusername = Auth.auth().currentUser!.displayName
     var clientuid = Auth.auth().currentUser!.uid
     var clientEmail: String = ""
     var clientccValue = 0
@@ -166,6 +167,7 @@ class ShopViewController: UIViewController {
         else{
             print("No connection")
         }
+    
         //self.paypalButtonOut.isEnabled = false
         //self.paypalButtonOut.setTitleColor(UIColor.gray, for: .disabled)
 
