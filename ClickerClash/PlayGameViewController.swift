@@ -220,6 +220,7 @@ class PlayGameViewController: UIViewController {
                     }
                         
                     else {
+                        SVProgressHUD.dismiss()
                         print("No highscore found vwa")
                     }
                     
