@@ -2647,10 +2647,13 @@ Terms of Use in effect and updated as of by: 12/09/2018
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWg-X1-sM5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="419-RS-I5M">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="419-RS-I5M">
                                         <rect key="frame" x="8" y="28" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="kPq-Lq-3sl"/>
+                                            <constraint firstAttribute="height" constant="40" id="wj9-i5-FXk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="25"/>
                                         <state key="normal" title="&lt;">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2802,8 +2805,10 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                     <constraint firstItem="PDw-gC-CsS" firstAttribute="top" secondItem="sWg-X1-sM5" secondAttribute="top" constant="20" id="MgJ-eQ-c7o"/>
                                     <constraint firstItem="PDw-gC-CsS" firstAttribute="centerX" secondItem="sWg-X1-sM5" secondAttribute="centerX" id="NHk-f2-cr3"/>
                                     <constraint firstItem="FAS-mG-ZpA" firstAttribute="centerX" secondItem="sWg-X1-sM5" secondAttribute="centerX" id="YS6-vs-R59"/>
+                                    <constraint firstItem="419-RS-I5M" firstAttribute="leading" secondItem="sWg-X1-sM5" secondAttribute="leading" constant="8" id="aaV-Z4-Hr8"/>
                                     <constraint firstItem="img-mK-Rx7" firstAttribute="centerX" secondItem="sWg-X1-sM5" secondAttribute="centerX" id="bYp-2X-yv8"/>
                                     <constraint firstItem="P4i-20-jdz" firstAttribute="centerX" secondItem="sWg-X1-sM5" secondAttribute="centerX" id="c8U-Ou-5OH"/>
+                                    <constraint firstItem="419-RS-I5M" firstAttribute="top" secondItem="sWg-X1-sM5" secondAttribute="top" constant="28" id="cN6-MK-UyV"/>
                                     <constraint firstItem="P4i-20-jdz" firstAttribute="top" secondItem="WDM-sL-APK" secondAttribute="bottom" constant="34" id="d3x-FL-thq"/>
                                     <constraint firstItem="FoZ-Ol-3Bs" firstAttribute="height" secondItem="2J0-AE-FLZ" secondAttribute="height" id="pCv-51-Sgb"/>
                                     <constraint firstItem="WDM-sL-APK" firstAttribute="top" secondItem="FAS-mG-ZpA" secondAttribute="bottom" constant="34" id="pGv-fo-Ebw"/>
