@@ -81,7 +81,9 @@ class ShopViewController: UIViewController {
     }
     
     func sendUserInfoPost() {
-        guard let url = URL(string: "http://127.0.0.1:8000/payout/postrequest/")else {return}
+        //guard let url = URL(string: "http://127.0.0.1:8000/payout/postrequest/")else {return}
+        guard let url = URL(string: "https://clickerclash.herokuapp.com/payout/postrequest/")else {return}
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
