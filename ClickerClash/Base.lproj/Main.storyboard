@@ -2462,6 +2462,9 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                                 <integer key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="MMc-yh-sWP" kind="show" identifier="St2MenuToPlayGameSegue" id="v8N-XU-JgA"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwb-DA-uQ6">
                                         <rect key="frame" x="24" y="87" width="25" height="25"/>
@@ -2635,8 +2638,8 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="backButton:" destination="QuD-Ki-DFe" eventType="touchUpInside" id="ur5-8a-pNO"/>
-                                            <action selector="backButton:" destination="uF6-B4-Xj1" eventType="touchUpInside" id="v0a-Tp-QIS"/>
+                                            <action selector="backButton:" destination="uF6-B4-Xj1" eventType="touchUpInside" id="jMa-3x-SCo"/>
+                                            <segue destination="l7V-iq-pOL" kind="show" identifier="st2ToMenuSegue" id="Qfo-bI-Qg7"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evd-xL-t37">
@@ -2840,7 +2843,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLP-3e-dBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="1227"/>
+            <point key="canvasLocation" x="913" y="1555"/>
         </scene>
         <!--St2 Play Game View Controller-->
         <scene sceneID="9Ca-SM-FW0">
@@ -3598,7 +3601,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJC-z5-Oc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2000000000000002" y="1226.5367316341831"/>
+            <point key="canvasLocation" x="-84" y="1555"/>
         </scene>
         <!--St1 Play Game View Controller-->
         <scene sceneID="vVV-2Z-Aar">
@@ -4177,9 +4180,10 @@ Terms of Use in effect and updated as of by: 12/09/2018
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cxz-hB-nj6"/>
+        <segue reference="v8N-XU-JgA"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="9A9-6h-Sia"/>
-        <segue reference="RRO-x4-y0U"/>
+        <segue reference="Qfo-bI-Qg7"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>
