@@ -705,14 +705,14 @@ class SilverTournamentViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("leaving the tourny view")
-        timeCount.invalidate()
-        timeCount2.invalidate()
+        //timeCount.invalidate()
+        //timeCount2.invalidate()
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("did leave the tourny view")
-        timeCount.invalidate()
-        timeCount2.invalidate()
+        //timeCount.invalidate()
+        //timeCount2.invalidate()
     }
     /*
     // MARK: - Navigation
