@@ -45,12 +45,14 @@ class SilverTournamentViewController: UIViewController {
     //--- Silver Tournament 1 UI---//
     @IBOutlet weak var s1TimeLeft: UILabel!
     @IBOutlet weak var s1Status: UILabel!
+    @IBOutlet weak var s1currentrankings: UILabel!
     @IBOutlet weak var s1JoinButton: UIButton!
     @IBOutlet weak var s1PlayButton: UIButton!
     //--- Silver Tournament 1 UI---//
     //--- Silver Tournament 2 UI---//
     @IBOutlet weak var s2TimeLeft: UILabel!
     @IBOutlet weak var s2Status: UILabel!
+    @IBOutlet weak var s2currentrankings: UILabel!
     @IBOutlet weak var s2JoinButton: UIButton!
     @IBOutlet weak var s2PlayButton: UIButton!
     //--- Silver Tournament 2 UI---//
@@ -535,7 +537,8 @@ class SilverTournamentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        s1currentrankings.adjustsFontSizeToFitWidth = true
+        s2currentrankings.adjustsFontSizeToFitWidth = true
         self.username = Auth.auth().currentUser?.displayName
         SVProgressHUD.setDefaultMaskType(.custom)
         

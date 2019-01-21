@@ -14,14 +14,31 @@ import Firebase
 
 class RatesViewController: UIViewController {
     var tabBarIndex: Int?
+    //Title
+    @IBOutlet weak var ccratestitle: UILabel!
+    //------ labels -------//
     
+    @IBOutlet weak var st1l1: UILabel!
+    @IBOutlet weak var st1l2: UILabel!
+    @IBOutlet weak var st1l3: UILabel!
+    @IBOutlet weak var st1l4: UILabel!
+    @IBOutlet weak var st1l5: UILabel!
+    
+    @IBOutlet weak var st2l1: UILabel!
+    @IBOutlet weak var st2l2: UILabel!
+    @IBOutlet weak var st2l3: UILabel!
+    @IBOutlet weak var st2l4: UILabel!
+    @IBOutlet weak var st2l5: UILabel!
+    
+    
+    //----- st1 rates -------//
     @IBOutlet weak var st1r1: UILabel!
     @IBOutlet weak var st1r2: UILabel!
     @IBOutlet weak var st1r3: UILabel!
     @IBOutlet weak var st1r4: UILabel!
     @IBOutlet weak var st1r5: UILabel!
     @IBOutlet weak var st1Reset: UILabel!
-    
+    //------ st2 rates ------//
     @IBOutlet weak var st2r1: UILabel!
     @IBOutlet weak var st2r2: UILabel!
     @IBOutlet weak var st2r3: UILabel!
@@ -45,6 +62,17 @@ class RatesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ccratestitle.adjustsFontSizeToFitWidth = true
+        st1l1.adjustsFontSizeToFitWidth = true
+        st1l2.adjustsFontSizeToFitWidth = true
+        st1l3.adjustsFontSizeToFitWidth = true
+        st1l4.adjustsFontSizeToFitWidth = true
+        st1l5.adjustsFontSizeToFitWidth = true
+        st2l1.adjustsFontSizeToFitWidth = true
+        st2l2.adjustsFontSizeToFitWidth = true
+        st2l3.adjustsFontSizeToFitWidth = true
+        st2l4.adjustsFontSizeToFitWidth = true
+        st2l5.adjustsFontSizeToFitWidth = true
         let ref = Database.database().reference()
        
         ref.child("rates").child("st1").child("reset").observe(.value, with: {(snapshot) in
