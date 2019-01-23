@@ -238,6 +238,10 @@ class PlayGameViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        playerHighScore.adjustsFontSizeToFitWidth = true
+        //playerHighScore.font = playerHighScore.font.withSize(playerHighScore.frame.height * 6/10)
+        //playerHighScore.font = playerHighScore.font.withSize(playerHighScore.bounds.height * 0.6)
+        currentScore.adjustsFontSizeToFitWidth = true
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
