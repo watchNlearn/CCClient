@@ -796,7 +796,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <!--Main Game View Controller-->
         <scene sceneID="s0T-vm-veu">
             <objects>
-                <tabBarController id="l7V-iq-pOL" customClass="MainGameViewController" customModule="ClickerClash" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainGameView" id="l7V-iq-pOL" customClass="MainGameViewController" customModule="ClickerClash" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nrN-lj-Sh8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -4283,7 +4283,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
     <inferredMetricsTieBreakers>
         <segue reference="7jS-Bi-sAV"/>
         <segue reference="aAt-HG-tIz"/>
-        <segue reference="RRO-x4-y0U"/>
+        <segue reference="S7Y-yZ-Gqu"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>

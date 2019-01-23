@@ -20,14 +20,15 @@ class MainGameViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.show()
+        //removed progress hud for now, looks more professional
+        //SVProgressHUD.setDefaultMaskType(.custom)
+        //SVProgressHUD.show()
         tabBar.inActiveTintColor()
         selectedIndex = defaultIndex
         // Do any additional setup after loading the view.
         // 
         if CheckInternet.Connection(){
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             print("connected")
         }
         else{
