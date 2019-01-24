@@ -4,7 +4,8 @@
 //
 //  Created by Caleb Lee on 10/3/18.
 //  Copyright © 2018 WithoutAnyLimits. All rights reserved.
-//
+//  Note SilverTournamentViewController is currently the main TournamentVC
+//  Main Implement more Tournament Views in the future
 
 import UIKit
 import Foundation
