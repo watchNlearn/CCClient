@@ -399,6 +399,16 @@ class St2MenuViewController: UIViewController {
                     return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
                 }
                 self.st2TimeLeft.text = timeString(time: timeCount)
+                if CheckInternet.Connection(){
+                    self.hasConnection = true
+                    print("connected")
+                }
+                else{
+                    self.hasConnection = false
+                    SVProgressHUD.setDefaultMaskType(.custom)
+                    SVProgressHUD.show(withStatus: "Attempting To Reconnect")
+                    print("No connection")
+                }
             }
             else{
                 self.timeCount.invalidate()

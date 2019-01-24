@@ -577,7 +577,7 @@ class SilverTournamentViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //disableButtons()
-        
+       
         if self.st1hs1.text == self.username {
             st1hs1.layer.borderColor = UIColor.orange.cgColor
             st1hs1.layer.borderWidth = 1.0
@@ -676,6 +676,10 @@ class SilverTournamentViewController: UIViewController {
                 print("connected")
             }
             else{
+                //because it is on timer constantly checking for internet connection
+                self.hasConnection = false
+                SVProgressHUD.setDefaultMaskType(.custom)
+                SVProgressHUD.show(withStatus: "Attempting To Reconnect")
                 print("No connection")
             }
                 //SVProgressHUD.dismiss()

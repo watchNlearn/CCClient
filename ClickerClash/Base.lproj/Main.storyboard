@@ -4281,6 +4281,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LFK-8a-rdJ"/>
         <segue reference="7jS-Bi-sAV"/>
         <segue reference="aAt-HG-tIz"/>
         <segue reference="FTh-nn-53p"/>
