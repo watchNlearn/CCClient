@@ -25,6 +25,7 @@ class SilverTournamentViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+    var eventDidHappen = false
     var hasConnection = false
     var username = Auth.auth().currentUser?.displayName
     var endDate: Int! = nil
@@ -188,6 +189,7 @@ class SilverTournamentViewController: UIViewController {
                 if snapshot.value != nil {
                     let key = (child as AnyObject).key as String
                     self.highScoresArray.append(key)
+                    
                     
                 }
             }
@@ -578,7 +580,8 @@ class SilverTournamentViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //disableButtons()
-       
+       st1EndDate()
+       st2EndDate()
         if self.st1hs1.text == self.username {
             st1hs1.layer.borderColor = UIColor.orange.cgColor
             st1hs1.layer.borderWidth = 1.0
@@ -674,7 +677,10 @@ class SilverTournamentViewController: UIViewController {
                 //SVProgressHUD.dismiss()
                 //comment out for now if doesnt work comment in!!
                 self.hasConnection = true
-                print("connected")
+                print("connected tmain")
+                if self.eventDidHappen == true {
+                   // SVProgressHUD.dismiss() 
+                }
             }
             else{
                 //because it is on timer constantly checking for internet connection
@@ -696,10 +702,13 @@ class SilverTournamentViewController: UIViewController {
             self.s2JoinButton.setTitleColor(UIColor .darkGray, for: .disabled)
            // SVProgressHUD.dismiss()
         }
-        if self.st1hs1.text != "" && self.st2hs1.text != "" && self.hasConnection == true {
+        if self.st1hs1.text != "" && self.st2hs1.text != "" && self.hasConnection == true && self.eventDidHappen == false {
             print("this is finishedLoading Check")
             finishedLoading = true
+            eventDidHappen = true
+            
         }
+        
     }
 
     

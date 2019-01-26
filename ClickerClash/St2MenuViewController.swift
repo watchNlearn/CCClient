@@ -22,6 +22,7 @@ class St2MenuViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+    var eventDidHappen = false
     var hasConnection = false
     var username: String! = nil
     var endDate: Int! = nil
@@ -417,9 +418,10 @@ class St2MenuViewController: UIViewController {
                 self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
                 
             }
-            if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true {
+            if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true && self.eventDidHappen == false {
                 print("finished loading st2")
                 self.finishedLoading = true
+                self.eventDidHappen = true
             }
         }
     override var preferredStatusBarStyle: UIStatusBarStyle {

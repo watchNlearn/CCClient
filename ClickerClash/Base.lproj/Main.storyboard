@@ -3844,7 +3844,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             <constraint firstAttribute="height" constant="50" id="Y1k-LM-qnp"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBv-bJ-peC">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBv-bJ-peC">
                                         <rect key="frame" x="97.5" y="60" width="180" height="72.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -4281,8 +4281,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LFK-8a-rdJ"/>
-        <segue reference="7jS-Bi-sAV"/>
+        <segue reference="ACB-0O-muy"/>
         <segue reference="aAt-HG-tIz"/>
         <segue reference="FTh-nn-53p"/>
         <segue reference="a6h-Pd-RQV"/>

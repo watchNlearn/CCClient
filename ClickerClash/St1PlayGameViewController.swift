@@ -21,6 +21,13 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
     var interstitial: GADInterstitial!
     //var uid = Auth.auth().currentUser?.uid
     //let pHighScore:Int? = Int(myString)
+    var finishedLoading = false {
+        didSet {
+            print("UI is updated")
+            SVProgressHUD.dismiss()
+        }
+    }
+    var eventDidHappen = false
     var clashHighScore = Int()
     var seconds = 5
     var timecount = Timer()
@@ -240,21 +247,25 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
                                 
                                 self.playerHighScoreC.text = highscore
                                 print("reading st1 score data")
-                                SVProgressHUD.dismiss()
+                                //comment out for now
+                                //SVProgressHUD.dismiss()
                             }
                                 //dont think it will ever reach here...
+                            /*
                             else {
                                 print("No st1 highscore found")
                                 SVProgressHUD.dismiss()
                             }
-                            
+                            */
                             
                             
                         })
                     }
                     else {
+                        self.playerHighScoreC.text = "0"
                         print("User has no recorded score in st1")
-                        SVProgressHUD.dismiss()
+                        //comment out for now
+                        //SVProgressHUD.dismiss()
                     }
                 })
             }
@@ -290,12 +301,14 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
             //})
             if currentDate < self.endDate {
                 self.timeCount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter2) , userInfo: nil, repeats: true)
-                SVProgressHUD.dismiss()
+                //comment out for now
+                //SVProgressHUD.dismiss()
             }
             else {
                 self.s1TimeLeft.text = "Closed"
                 self.endGameNow = true
-                SVProgressHUD.dismiss()
+                //comment out for now
+                //SVProgressHUD.dismiss()
             }
         })
         //Sets String of textbox to Int pHighScore
@@ -350,12 +363,23 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
             return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
         }
         self.s1TimeLeft.text = timeString(time: timeCount)
+            
         }
+       
         else {
             self.buttonOutlet.isEnabled = false
             self.buttonOutlet.setTitleColor(UIColor .darkGray, for: .disabled)
             print("cant play game end date reached")
         }
+        if self.playerHighScoreC.text != nil && self.eventDidHappen == false {
+            finishedLoading = true
+            eventDidHappen = true
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("leaving st1 view")
+        //self.timeCount.invalidate()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

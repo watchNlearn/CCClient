@@ -23,6 +23,7 @@ class St1MenuViewController: UIViewController {
            SVProgressHUD.dismiss()
         }
     }
+    var eventDidHappen = false
     var hasConnection = false
     var username: String! = nil
     var endDate: Int! = nil
@@ -405,7 +406,7 @@ class St1MenuViewController: UIViewController {
         self.st1TimeLeft.text = timeString(time: timeCount)
             if CheckInternet.Connection(){
                 self.hasConnection = true
-                print("connected")
+                print("connected tmenu")
             }
             else{
                 self.hasConnection = false
@@ -421,10 +422,12 @@ class St1MenuViewController: UIViewController {
             self.clashButton.setTitleColor(UIColor.darkGray, for: .disabled)
         
         }
-        if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true {
+        if self.hs1.text != "" && self.hs1s.text != "" && self.hasConnection == true && self.eventDidHappen == false {
             print("finished loading st1")
             self.finishedLoading = true
+            self.eventDidHappen = true
         }
+        
         //SVProgressHUD.dismiss()
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -433,7 +436,7 @@ class St1MenuViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("leaving st1 view")
-        self.timeCount.invalidate()
+        //self.timeCount.invalidate()
     }
 
     /*
