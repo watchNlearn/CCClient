@@ -25,6 +25,7 @@ class SilverTournamentViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+    var connectionWasDropped = false
     var eventDidHappen = false
     var hasConnection = false
     var username = Auth.auth().currentUser?.displayName
@@ -678,8 +679,8 @@ class SilverTournamentViewController: UIViewController {
                 //comment out for now if doesnt work comment in!!
                 self.hasConnection = true
                 print("connected tmain")
-                if self.eventDidHappen == true {
-                   // SVProgressHUD.dismiss() 
+                if self.eventDidHappen == true && self.connectionWasDropped == true {
+                    SVProgressHUD.dismiss()
                 }
             }
             else{
@@ -687,6 +688,7 @@ class SilverTournamentViewController: UIViewController {
                 self.hasConnection = false
                 SVProgressHUD.setDefaultMaskType(.custom)
                 SVProgressHUD.show(withStatus: "Attempting To Reconnect")
+                self.connectionWasDropped = true
                 print("No connection")
             }
                 //SVProgressHUD.dismiss()
