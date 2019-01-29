@@ -516,12 +516,12 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                             <constraint firstAttribute="height" constant="4" id="dia-hi-fEM"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-rk-csN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-rk-csN">
                                         <rect key="frame" x="79.5" y="497" width="277.5" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="jbB-qA-vIW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.57647058819999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4287,7 +4287,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <segue reference="aAt-HG-tIz"/>
         <segue reference="5Qi-4c-LR7"/>
         <segue reference="a6h-Pd-RQV"/>
-        <segue reference="6kE-fE-WYJ"/>
+        <segue reference="G3z-7u-L8J"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
