@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainScreen = storyBoard.instantiateViewController(withIdentifier: "mainGameView")
             self.window?.rootViewController = mainScreen
         }
+        //Linked App ID to Admob ClickerClash ID
         GADMobileAds.configure(withApplicationID: "ca-app-pub-5347695699689963~4557148416")
         return true
     }
