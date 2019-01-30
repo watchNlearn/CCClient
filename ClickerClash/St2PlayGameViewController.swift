@@ -351,6 +351,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
     
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         print("Ad dismissed")
+        SVProgressHUD.dismiss()
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + (self.playerHighScoreC.text!), preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

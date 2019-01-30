@@ -14,25 +14,16 @@
  * limitations under the License.
  */
 
-#ifndef FIRComponentRegistrant_h
-#define FIRComponentRegistrant_h
+#import "NSData+FIRBase64.h"
 
-#import <Foundation/Foundation.h>
+@implementation NSData (FIRBase64)
 
-@class FIRComponent;
-
-NS_ASSUME_NONNULL_BEGIN
-
-/// Describes functionality for SDKs registering components in the `FIRComponentContainer`.
-NS_SWIFT_NAME(ComponentRegistrant)
-@protocol FIRComponentRegistrant
-
-/// Returns one or more FIRComponents that will be registered in
-/// FIRApp and participate in dependency resolution and injection.
-+ (NSArray<FIRComponent *> *)componentsToRegister;
+- (NSString *)fir_base64URLEncodedStringWithOptions:(NSDataBase64EncodingOptions)options {
+  NSString *string = [self base64EncodedStringWithOptions:options];
+  string = [string stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+  string = [string stringByReplacingOccurrencesOfString:@"+" withString:@"-"];
+  string = [string stringByReplacingOccurrencesOfString:@"=" withString:@""];
+  return string;
+}
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#endif /* FIRComponentRegistrant_h */

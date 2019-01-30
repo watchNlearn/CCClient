@@ -14,25 +14,18 @@
  * limitations under the License.
  */
 
-#ifndef FIRCoreConfigurable_h
-#define FIRCoreConfigurable_h
-
 #import <Foundation/Foundation.h>
-
-@class FIRApp;
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Provides an interface to set up an SDK once a `FIRApp` is configured.
-NS_SWIFT_NAME(CoreConfigurable)
-@protocol FIRCoreConfigurable
+@interface NSData (FIRBase64)
 
-/// Configure the SDK if needed ahead of time. This method is called when the developer calls
-/// `FirebaseApp.configure()`.
-+ (void)configureWithApp:(FIRApp *)app;
+/** @fn fir_base64URLEncodedStringWithOptions:
+    @brief Get a web safe base64 encoded string
+    @param options The base64 encoding options
+ */
+- (NSString *)fir_base64URLEncodedStringWithOptions:(NSDataBase64EncodingOptions)options;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif /* FIRCoreConfigurable_h */
