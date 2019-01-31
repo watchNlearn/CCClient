@@ -50,7 +50,6 @@ class ShopViewController: UIViewController {
                 alertController1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Continue")
                     SVProgressHUD.setDefaultMaskType(.custom)
-                    //SVProgressHUD.show()
                     SVProgressHUD.show(withStatus: "Processing Purchase...")
                     self.sendUserInfoPost()
                 }))
