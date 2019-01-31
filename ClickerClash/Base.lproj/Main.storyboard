@@ -791,7 +791,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RV6-gY-Ik3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-927.20000000000005" y="-123.68815592203899"/>
+            <point key="canvasLocation" x="-791" y="-124"/>
         </scene>
         <!--Main Game View Controller-->
         <scene sceneID="s0T-vm-veu">
@@ -2042,7 +2042,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7U-CV-SS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.80000000000001" y="-54.422788605697157"/>
+            <point key="canvasLocation" x="423" y="-123"/>
         </scene>
         <!--Rates View Controller-->
         <scene sceneID="sG4-XP-Ner">
@@ -4282,7 +4282,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7jS-Bi-sAV"/>
-        <segue reference="9A9-6h-Sia"/>
+        <segue reference="aAt-HG-tIz"/>
         <segue reference="mmK-kc-vsI"/>
         <segue reference="a6h-Pd-RQV"/>
         <segue reference="ku8-nM-F0O"/>
