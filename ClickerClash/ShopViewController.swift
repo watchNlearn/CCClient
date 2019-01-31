@@ -62,7 +62,7 @@ class ShopViewController: UIViewController {
         //User has enough but payout is locked
         if clientccValue >= 1000 && self.payoutLock == true {
             SVProgressHUD.dismiss()
-            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured, please try again later.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
             print("payment lock is active")
@@ -144,7 +144,7 @@ class ShopViewController: UIViewController {
                     else {
                         SVProgressHUD.dismiss()
                         DispatchQueue.main.async {
-                            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+                            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured, please try again later.", preferredStyle: UIAlertControllerStyle.alert)
                             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alertController, animated: true, completion: nil)
                         }
