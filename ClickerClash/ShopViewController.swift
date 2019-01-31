@@ -50,7 +50,8 @@ class ShopViewController: UIViewController {
                 alertController1.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                     print("Continue")
                     SVProgressHUD.setDefaultMaskType(.custom)
-                    SVProgressHUD.show()
+                    //SVProgressHUD.show()
+                    SVProgressHUD.show(withStatus: "Processing Purchase...")
                     self.sendUserInfoPost()
                 }))
                 
@@ -152,6 +153,12 @@ class ShopViewController: UIViewController {
                 }
                 catch {
                     print(error)
+                    SVProgressHUD.dismiss()
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured, please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+                        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
             }
             
