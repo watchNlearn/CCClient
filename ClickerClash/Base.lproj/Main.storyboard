@@ -260,7 +260,7 @@ Terms of Use in effect and updated as of by: 12/09/2018
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CC logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-6W-MrZ">
                                         <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Email Entered Here Must Be Valid to Cashout! (Use your PayPal Email If Possible)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFE-HL-NJp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Email Entered Here Must Be Valid To Recieve Rewards! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFE-HL-NJp">
                                         <rect key="frame" x="88" y="195" width="210" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="nr8-Si-Vm8"/>
@@ -4281,11 +4281,12 @@ Terms of Use in effect and updated as of by: 12/09/2018
         <image name="trophyG-30x.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sL4-hw-xD2"/>
         <segue reference="ACB-0O-muy"/>
         <segue reference="aAt-HG-tIz"/>
-        <segue reference="5Qi-4c-LR7"/>
+        <segue reference="mmK-kc-vsI"/>
         <segue reference="a6h-Pd-RQV"/>
-        <segue reference="G3z-7u-L8J"/>
+        <segue reference="ku8-nM-F0O"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
