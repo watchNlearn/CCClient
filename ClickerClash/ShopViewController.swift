@@ -141,6 +141,14 @@ class ShopViewController: UIViewController {
                             self.present(alertController, animated: true, completion: nil)
                         }
                     }
+                    else {
+                        SVProgressHUD.dismiss()
+                        DispatchQueue.main.async {
+                            let alertController = UIAlertController(title: "Error Purchasing", message: "An error has occured please try again later.", preferredStyle: UIAlertControllerStyle.alert)
+                            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
                 }
                 catch {
                     print(error)
