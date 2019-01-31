@@ -261,6 +261,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
                         })
                     }
                     else {
+                        self.playerHighScoreC.text = "0"
                         print("User has no recorded score in st2")
                         //SVProgressHUD.dismiss()
                     }
