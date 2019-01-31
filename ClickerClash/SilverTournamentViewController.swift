@@ -546,10 +546,7 @@ class SilverTournamentViewController: UIViewController {
         self.username = Auth.auth().currentUser?.displayName
         SVProgressHUD.setDefaultMaskType(.custom)
         
-        //SVProgressHUD.setForegroundColor(UIColor.green)
-        //SVProgressHUD.setBackgroundColor(UIColor.yellow)
-        //SVProgressHUD.setBackgroundLayerColor(UIColor.orange)
-        //SVProgressHUD.show(withStatus: "Loading...")
+        
         SVProgressHUD.show()
         disableButtons()
         //Set buttons to disabled and then make active

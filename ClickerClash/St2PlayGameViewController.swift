@@ -148,7 +148,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
                         
                         self.currentCount = 0
                         //elf.newGame = true
-                        //*****
+                        
                         
                     }
                 }
@@ -180,16 +180,13 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
                         
                         self.currentCount = 0
                         //self.newGame = true
-                        //****
+                        
                     }
                     
                 }
             })
             //interstitial.load(GADRequest())
             presentAd()
-            //ref.child("tournaments").child("silver").child("st2").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
-            //let value = snapshot.value as! Int
-            //let StringValue = String(value)
             //dispatchq
             //interstitial.present(fromRootViewController: self)
             

@@ -257,7 +257,7 @@ class LeaderboardViewController: UIViewController {
         super.viewDidAppear(animated)
         updateLeaderboard()
         
-        //print("hi")
+       
         
     }
     override func viewWillAppear(_ animated: Bool) {

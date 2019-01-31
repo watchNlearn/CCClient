@@ -193,9 +193,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
                 }
             })
             presentAd()
-            //ref.child("tournaments").child("silver").child("st1").child("usersPlaying").child(username!).observeSingleEvent(of: .value, with: { (snapshot) in
-            //let value = snapshot.value as! Int
-            //let StringValue = String(value)
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 let alertController = UIAlertController(title: "Game Over", message: "Your Tournament High Score is " + String(self.clashHighScore), preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

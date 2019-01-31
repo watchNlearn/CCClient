@@ -130,16 +130,12 @@ class SignUpViewController: UIViewController {
         signupPassword.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         
         // Do any additional setup after loading the view.
-            //signupButton.setTitleColor(UIColor.cyan, for: .normal)
-            //signupButton.layer.shadowColor = UIColor.cyan.cgColor
+            
             signupButton.clipsToBounds = true
             signupButton.layer.cornerRadius = 11
-            //self.signupButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
-            //cancelButton.setTitleColor(UIColor.cyan, for: .normal)
-            //cancelButton.layer.shadowColor = UIColor.cyan.cgColor
+           
             cancelButton.clipsToBounds = true
             cancelButton.layer.cornerRadius = 11
-            //self.cancelButton.applyGradient(colors: [UIColor.darkGray.cgColor, UIColor.gray.cgColor])
             
             self.view.bringSubview(toFront: usernameLabel)
             self.view.bringSubview(toFront: emailLabel)
