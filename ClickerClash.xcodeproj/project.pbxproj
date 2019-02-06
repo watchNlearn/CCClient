@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B2BB321B61FF000D79ECC /* PayPalCard.png */; };
 		0B2DA6722199655000876F47 /* PlayGameMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DA6712199654F00876F47 /* PlayGameMenuViewController.swift */; };
 		0B2DA676219A2BA200876F47 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DA675219A2BA200876F47 /* ShopViewController.swift */; };
 		0B56C53B21BCF5B400C945B3 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B1B2BB321B61FF000D79ECC /* PayPalCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PayPalCard.png; sourceTree = "<group>"; };
 		0B2DA6712199654F00876F47 /* PlayGameMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameMenuViewController.swift; sourceTree = "<group>"; };
 		0B2DA675219A2BA200876F47 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		0B56C53A21BCF5B400C945B3 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				0B56C55E21C5ED3D00C945B3 /* clickicon.png */,
 				0B56C54021BE42D000C945B3 /* CC logo.png */,
 				0B56C53C21BE3D6800C945B3 /* CC thick.png */,
-				0B1B2BB321B61FF000D79ECC /* PayPalCard.png */,
 				0B8F43B721EA670F0027FBC4 /* amazoncard.png */,
 				0B56C55021C33A7300C945B3 /* lbG-30x.png */,
 				0B56C54E21C33A2400C945B3 /* shopG-30x.png */,
@@ -241,7 +238,6 @@
 				0B56C54121BE42D000C945B3 /* CC logo.png in Resources */,
 				0BC9E46121328831002E2E9C /* Assets.xcassets in Resources */,
 				0B56C54B21C3390F00C945B3 /* trophyG-30x.png in Resources */,
-				0B1B2BB421B61FF000D79ECC /* PayPalCard.png in Resources */,
 				0B56C55121C33A7400C945B3 /* lbG-30x.png in Resources */,
 				0B8F43B821EA67100027FBC4 /* amazoncard.png in Resources */,
 				0B56C54921C3389200C945B3 /* ccIcon-30x.png in Resources */,

@@ -298,7 +298,6 @@ class SilverTournamentViewController: UIViewController {
             
             
             for child in snapshot.children {
-                
                 if snapshot.value != nil {
                     let key = (child as AnyObject).key as String
                     self.highScoresArray2.append(key)
