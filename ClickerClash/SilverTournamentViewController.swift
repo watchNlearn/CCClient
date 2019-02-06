@@ -645,7 +645,6 @@ class SilverTournamentViewController: UIViewController {
             //SVProgressHUD.dismiss()
         }
         else {
-            print("hello?")
             self.timeCount.invalidate()
             self.s1TimeLeft.text = "Closed"
             print("counter closed")

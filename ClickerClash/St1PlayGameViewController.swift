@@ -187,7 +187,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
 
                        self.currentCount = 0
                         //self.newGame = true
-                        //****
+                        
                     }
                     
                 }
@@ -301,7 +301,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
         let ref = Database.database().reference()
         ref.child("tournaments").child("standard").child("st1").child("endDate").observe(.value, with: {(snapshot) in
             self.endDate = snapshot.value as? Int
-            //})
+            
             if currentDate < self.endDate {
                 self.timeCount = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counter2) , userInfo: nil, repeats: true)
                 //comment out for now
@@ -352,7 +352,7 @@ class St1PlayGameViewController: UIViewController, GADInterstitialDelegate {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
         
-        //}
+        
         //interstitial = createAndLoadInterstitial()
         interstitial.load(GADRequest())
         print("heyy")
