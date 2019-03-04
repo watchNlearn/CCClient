@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = mainScreen
         }
         //Linked App ID to Admob ClickerClash ID
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-5347695699689963~4557148416")
+        GADMobileAds.configure(withApplicationID: "")
         return true
     }
 
