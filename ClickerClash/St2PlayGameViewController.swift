@@ -280,13 +280,13 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
         //Testing
         //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         //Live
-        bannerView.adUnitID = "ca-app-pub-5347695699689963/7391857366"
+        bannerView.adUnitID = ""
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         //Testing
         //interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         //Live
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-5347695699689963/2833003200")
+        interstitial = GADInterstitial(adUnitID: "")
         let request = GADRequest()
         interstitial.load(request)
         interstitial.delegate = self
@@ -326,7 +326,7 @@ class St2PlayGameViewController: UIViewController, GADInterstitialDelegate {
         //Testing
         //let interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         //Live
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-5347695699689963/2833003200")
+        let interstitial = GADInterstitial(adUnitID: "")
 
         //interstitial.delegate = self as? GADInterstitialDelegate
         interstitial.load(GADRequest())
