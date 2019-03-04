@@ -82,7 +82,7 @@ class ShopViewController: UIViewController {
     
     func sendUserInfoPost() {
         //guard let url = URL(string: "http://127.0.0.1:8000/payout/postrequest/")else {return}
-        guard let url = URL(string: "https://clickerclash.herokuapp.com/payout/postrequest/")else {return}
+        guard let url = URL(string: "")else {return}
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -92,7 +92,7 @@ class ShopViewController: UIViewController {
         
         
         
-        let sendInformation = UserInfo(username: clientusername!, email: clientEmail, uid: clientuid, ccValue: clientccValue, date: currentDate, clientKey: "yea_im_feeling_like_ray_charles")
+        let sendInformation = UserInfo(username: clientusername!, email: clientEmail, uid: clientuid, ccValue: clientccValue, date: currentDate, clientKey: "")
         do {
             let jsonBody = try JSONEncoder().encode(sendInformation)
             let jsonString = String(data: jsonBody, encoding: .utf8)
